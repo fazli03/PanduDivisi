@@ -535,6 +535,56 @@ header {
   animation-play-state: paused !important;
 }
 
+/* ================================================= */
+/* ==   RESPONSIVE UNTUK DIVISI SECTION (MOBILE)  == */
+/* ================================================= */
+
+@media (max-width: 768px) {
+  /* 1. Tumpuk layout utama (teks di atas, grid di bawah) */
+  .divisi-container {
+    flex-direction: column; /* Menumpuk vertikal */
+    gap: 40px;
+  }
+
+  /* 2. Pusatkan konten teks */
+  .divisi-content {
+    text-align: center;
+  }
+
+  /* Pindahkan tombol CTA ke tengah */
+
+  /* 3. Perbaiki grid itu sendiri */
+  .divisi-grid {
+    flex-direction: column; /* Tumpuk kolom kiri & kanan */
+    height: auto; /* Hapus tinggi tetap agar semua card terlihat */
+    overflow: visible; /* Hapus overflow (untuk scroll) */
+    mask-image: none; /* Hapus efek fade */
+    -webkit-mask-image: none;
+    width: 100%;
+  }
+
+  /* 4. HENTIKAN ANIMASI SCROLL (SANGAT PENTING) */
+  .grid-column {
+    animation: none !important; /* Mematikan animasi scroll */
+  }
+
+  /* 5. Pastikan card lebarnya penuh */
+  .divisi-card {
+    width: 100%;
+  }
+
+  /* 6. Perbaiki ukuran font judul di card */
+  .divisi-card h3 {
+    font-size: 18px; /* Sedikit lebih kecil agar rapi */
+    /* Ini untuk judul yang panjang di card terakhir */
+    line-height: 1.4;
+  }
+
+  .grid-column > .divisi-card:nth-child(n + 4) {
+    display: none; /* Sembunyikan! */
+  }
+}
+
 /* Footer */
 footer {
   text-align: center;
