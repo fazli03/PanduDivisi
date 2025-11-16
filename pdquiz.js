@@ -1122,7 +1122,7 @@ function showGeneralResultsButtons(recommendedCategory) {
 
   // 2. Buat Tombol "Kembali ke Home" (Lama)
   const homeBtn = document.createElement("a");
-  homeBtn.href = "pdhome.html"; // Pastikan nama file home Anda benar
+  homeBtn.href = "index.html"; // Pastikan nama file home Anda benar
   homeBtn.className = "cta-button secondary"; // Tombol abu-abu (sekunder)
   homeBtn.innerText = "Kembali ke Home";
 
