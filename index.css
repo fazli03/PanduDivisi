@@ -230,6 +230,15 @@ header {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  /* ... (style Anda yang lain, seperti .divisi-grid, .grid-column) ... */
+
+  .divisi-cta .cta-button {
+    font-size: 16px; /* Kecilkan font (dari 18px) */
+    padding: 16px 30px; /* Kecilkan padding (dari 18px 50px) */
+  }
+}
+
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
@@ -613,3 +622,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
