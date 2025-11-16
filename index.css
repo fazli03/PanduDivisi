@@ -233,7 +233,7 @@ header {
 @media (max-width: 768px) {
   /* ... (style Anda yang lain, seperti .divisi-grid, .grid-column) ... */
 
-  .divisi-cta .cta-button {
+.cta-button {
     font-size: 16px; /* Kecilkan font (dari 18px) */
     padding: 16px 30px; /* Kecilkan padding (dari 18px 50px) */
   }
@@ -622,4 +622,5 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
