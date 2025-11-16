@@ -1009,6 +1009,11 @@ function updateTimer() {
 }
 
 // --- FUNGSI UNTUK MENAMPILKAN HASIL AKHIR ---
+/* ================================================= */
+/* ==   GANTI FUNGSI LAMA ANDA DENGAN YANG BARU INI   == */
+/* ================================================= */
+
+// --- FUNGSI UNTUK MENAMPILKAN HASIL AKHIR ---
 function showResults() {
   // Hentikan timer (untuk jaga-jaga jika belum berhenti)
   clearInterval(timerInterval);
@@ -1017,48 +1022,116 @@ function showResults() {
   quizActiveScreen.classList.add("hidden");
   quizResultsScreen.classList.remove("hidden");
 
-  // LOGIKA HASIL DINAMIS:
-  // 1. Cari divisi dengan skor tertinggi
-  let topDivision = "";
-  let highestScore = -1; // Mulai dari -1
+  // 1. Cari hasil dengan skor tertinggi (Nama kunci bisa 'web_uiux' ATAU 'software')
+  let topResultKey = "";
+  let highestScore = -1;
 
-  for (const division in scores) {
-    if (scores[division] > highestScore) {
-      highestScore = scores[division];
-      topDivision = division;
+  for (const key in scores) {
+    if (scores[key] > highestScore) {
+      highestScore = scores[key];
+      topResultKey = key;
     }
   }
 
   // 2. Hitung total poin maksimum (ASUMSI: 3 poin per soal)
-  // (Ini bisa dibuat lebih canggih nanti)
   const totalPointsPossible = quizData.length * 3;
   const percentage = Math.round((highestScore / totalPointsPossible) * 100);
 
-  // 3. Tampilkan hasil utama
-  if (topDivision && resultData[topDivision]) {
-    resultScore.innerText = `${percentage}%`;
-    resultDivision.innerText = resultData[topDivision].name;
-    resultDescription.innerText = resultData[topDivision].description;
-  } else {
-    // Tampilan 'fallback' jika terjadi error
-    resultScore.innerText = "N/A";
-    resultDivision.innerText = "Tidak Ditemukan";
-    resultDescription.innerText =
-      "Terjadi kesalahan dalam perhitungan. Silakan coba lagi.";
-  }
+  // 3. Sembunyikan/Tampilkan elemen berdasarkan jenis kuis
+  const secondaryBox = document.querySelector(".secondary-results");
+  const boxBtnFinish = document.getElementById("box-btn-finish");
 
-  // 4. Tampilkan hasil sekunder (divisi lain di kategori ini)
-  secondaryResultsList.innerHTML = ""; // Kosongkan list
-  for (const division in scores) {
-    if (division !== topDivision && resultData[division]) {
-      const secondaryPercentage = Math.round(
-        (scores[division] / totalPointsPossible) * 100
-      );
-      const li = document.createElement("li");
-      li.innerText = `${resultData[division].name}: ${secondaryPercentage}%`;
-      secondaryResultsList.appendChild(li);
+  // Sembunyikan semua elemen hasil sekunder/tombol DULU
+  if (secondaryBox) secondaryBox.style.display = "none";
+  if (boxBtnFinish) boxBtnFinish.style.display = "none";
+
+  /* ================================================================ */
+  /* --- INILAH LOGIKA BARU UNTUK MEMPERBAIKI BUG "GENERAL" --- */
+  /* ================================================================ */
+
+  // 4. Cek apakah ini kuis 'general'
+  if (currentCategory === "general") {
+    // --- HASIL UNTUK KUIS GENERAL (REKOMENDASI KATEGORI) ---
+
+    // 'topResultKey' adalah 'software', 'data', dll.
+    // Kita ambil datanya dari categoryMap (yang berisi judul kategori)
+    const categoryInfo = categoryMap[topResultKey] || categoryMap.default;
+
+    resultScore.innerText = `${percentage}%`;
+    resultDivision.innerText = categoryInfo.title; // e.g., "Software & Development"
+    resultDescription.innerText = `Anda menunjukkan minat bakat terkuat di kategori ini. ${categoryInfo.description}`;
+
+    // Karena ini kuis general, kita tidak menampilkan hasil sekunder.
+    // Tampilkan tombol yang sudah dimodifikasi:
+    showGeneralResultsButtons(topResultKey); // Panggil fungsi helper baru
+  } else {
+    // --- HASIL UNTUK KUIS DIVISI (NORMAL/STANDAR) ---
+
+    // Tampilkan kembali box sekunder & tombol normal
+    if (secondaryBox) secondaryBox.style.display = "block";
+    if (boxBtnFinish) boxBtnFinish.style.display = "flex"; // 'flex' (bukan 'block')
+
+    // 'topResultKey' adalah 'web_uiux', 'data_analyst', dll.
+    // Kita ambil datanya dari masterResultData
+    if (topResultKey && resultData[topResultKey]) {
+      resultScore.innerText = `${percentage}%`;
+      resultDivision.innerText = resultData[topResultKey].name;
+      resultDescription.innerText = resultData[topResultKey].description;
+    } else {
+      // Tampilan 'fallback' jika divisi tidak ditemukan
+      resultScore.innerText = "N/A";
+      resultDivision.innerText = "Tidak Ditemukan";
+      resultDescription.innerText = "Terjadi kesalahan dalam perhitungan.";
+    }
+
+    // Tampilkan hasil sekunder (normal)
+    secondaryResultsList.innerHTML = ""; // Kosongkan list
+    for (const division in scores) {
+      if (division !== topResultKey && resultData[division]) {
+        const secondaryPercentage = Math.round(
+          (scores[division] / totalPointsPossible) * 100
+        );
+        const li = document.createElement("li");
+        li.innerText = `${resultData[division].name}: ${secondaryPercentage}%`;
+        secondaryResultsList.appendChild(li);
+      }
     }
   }
+}
+
+/* ================================================= */
+/* ==   TAMBAHKAN FUNGSI BARU INI DI FILE ANDA   == */
+/* ================================================= */
+
+/**
+ * Fungsi ini membuat tombol custom untuk halaman hasil "General".
+ * Ini memberikan pengguna pilihan untuk lanjut ke kuis yang direkomendasikan.
+ */
+function showGeneralResultsButtons(recommendedCategory) {
+  // Ambil div .box-btn (pembungkus tombol)
+  const boxBtnContainer = document.getElementById("box-btn-finish");
+
+  // Kosongkan tombol lama
+  boxBtnContainer.innerHTML = "";
+
+  // 1. Buat Tombol "Mulai Kuis Rekomendasi" (BARU)
+  const startRecommendedQuizBtn = document.createElement("a");
+  startRecommendedQuizBtn.href = `pdquiz.html?category=${recommendedCategory}`;
+  startRecommendedQuizBtn.className = "cta-button"; // Tombol ungu (primer)
+  startRecommendedQuizBtn.innerText = `Mulai Quiz '${categoryMap[recommendedCategory].title}'`;
+
+  // 2. Buat Tombol "Kembali ke Home" (Lama)
+  const homeBtn = document.createElement("a");
+  homeBtn.href = "pdhome.html"; // Pastikan nama file home Anda benar
+  homeBtn.className = "cta-button secondary"; // Tombol abu-abu (sekunder)
+  homeBtn.innerText = "Kembali ke Home";
+
+  // 3. Masukkan tombol baru ke container
+  boxBtnContainer.appendChild(homeBtn); // Tombol Home dulu
+  boxBtnContainer.appendChild(startRecommendedQuizBtn); // Tombol Rekomendasi
+
+  // Tampilkan container-nya
+  boxBtnContainer.style.display = "flex";
 }
 
 // --- FUNGSI UNTUK BACKGROUND BINTANG ---
