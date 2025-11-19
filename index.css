@@ -1,3 +1,6 @@
+/* ========================================= */
+/* 1. GLOBAL & RESET */
+/* ========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +14,9 @@ body {
   color: #fff;
 }
 
-/* Space Background Animation */
+/* ========================================= */
+/* 2. BACKGROUND ANIMATION */
+/* ========================================= */
 #space {
   position: fixed;
   top: 0;
@@ -63,7 +68,9 @@ body {
   }
 }
 
-/* Content Container */
+/* ========================================= */
+/* 3. LAYOUT & HEADER */
+/* ========================================= */
 .container {
   position: relative;
   z-index: 1;
@@ -72,17 +79,19 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
 header {
   padding: 10px;
   margin-top: 30px;
 }
+
 .logo-vinix img {
-  height: 40px; /* Atur tingginya agar rapi, lebar akan ikut otomatis */
+  height: 40px;
   width: auto;
 }
 
-/* Hero Section */
+/* ========================================= */
+/* 4. HERO SECTION */
+/* ========================================= */
 .hero {
   text-align: center;
   padding: 60px 0 60px;
@@ -92,6 +101,7 @@ header {
   width: 235px;
   height: 235px;
 }
+
 .hero h1 {
   font-size: 56px;
   font-weight: 800;
@@ -124,40 +134,16 @@ header {
   }
 }
 
-/* Why Us Section */
-.why-us {
+/* ========================================= */
+/* 5. WHY US & STEPS SECTIONS */
+/* ========================================= */
+.why-us,
+.steps {
   padding: 60px 0;
   animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-.why-us h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px; /* Sedikit beda dari .steps h2 */
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.why-us-subtitle {
-  /* Style mirip dengan .categories-subtitle */
-  text-align: center;
-  color: #b8b8b8;
-  margin-bottom: 50px;
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Steps Section */
-.steps {
-  padding: 60px 0;
-  animation: fadeInUp 1s ease-out 0.4s both;
-}
-
+.why-us h2,
 .steps h2 {
   text-align: center;
   font-size: 36px;
@@ -166,6 +152,17 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.why-us-subtitle {
+  text-align: center;
+  color: #b8b8b8;
+  margin-bottom: 50px;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .steps-container {
@@ -199,9 +196,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
   margin: 0 auto 20px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.step-number i {
+  font-size: 24px;
+  color: #fff;
 }
 
 .step-card h3 {
@@ -214,41 +216,9 @@ header {
   line-height: 1.6;
 }
 
-/* CTA Button */
-.cta-button {
-  display: inline-block;
-  padding: 18px 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-  border: none;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  /* ... (style Anda yang lain, seperti .divisi-grid, .grid-column) ... */
-
-.cta-button {
-    font-size: 16px; /* Kecilkan font (dari 18px) */
-    padding: 16px 30px; /* Kecilkan padding (dari 18px 50px) */
-  }
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-}
-
-.cta-center {
-  text-align: center;
-}
-
-/* Categories Section */
+/* ========================================= */
+/* 6. CATEGORIES SECTION (FIXED LAYOUT) */
+/* ========================================= */
 .categories {
   padding: 80px 0;
   animation: fadeInUp 1s ease-out 0.6s both;
@@ -278,15 +248,26 @@ header {
   margin-bottom: 60px;
 }
 
+/* --- CARD UTAMA (Flex Column untuk dorong tombol ke bawah) --- */
 .category-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Penting agar semua kartu tingginya sama */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 35px;
+  padding: 30px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.5);
 }
 
 .category-card::before {
@@ -299,25 +280,48 @@ header {
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
 }
 
-.category-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
-  border-color: rgba(102, 126, 234, 0.5);
-}
-
-.category-card h3 {
-  font-size: 26px;
+/* --- HEADER CARD (Ikon + Judul Sejajar) --- */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   margin-bottom: 15px;
-  color: #fff;
+  flex-shrink: 0; /* Header tidak boleh mengecil */
 }
 
+.card-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.card-icon i {
+  font-size: 24px;
+  color: #a8b6ff;
+}
+
+.card-header h3 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* --- DESKRIPSI (Di bawah Header) --- */
 .category-card p {
   color: #b8b8b8;
   margin-bottom: 20px;
   line-height: 1.6;
+  font-size: 16px;
+  flex-grow: 0;
 }
 
+/* --- SKILLS & LIST --- */
 .skills-chips {
   display: flex;
   flex-wrap: wrap;
@@ -366,7 +370,52 @@ header {
   color: #667eea;
 }
 
+/* ========================================= */
+/* 7. BUTTONS */
+/* ========================================= */
+.cta-button {
+  display: inline-block;
+  padding: 18px 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  border: none;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.cta-center {
+  text-align: center;
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- TOMBOL KHUSUS KATEGORI (DI BAWAH CARD) --- */
 .category-button {
+  margin-top: auto; /* KUNCI: Mendorong tombol ke dasar kartu */
+  width: 100%;
+  text-align: center;
   display: inline-block;
   padding: 12px 30px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -378,6 +427,8 @@ header {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin-bottom: 0;
 }
 
 .category-button:hover {
@@ -385,7 +436,9 @@ header {
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
 }
 
-/* divisi Section */
+/* ========================================= */
+/* 8. DIVISI SECTION (SCROLLING GRID) */
+/* ========================================= */
 .divisi-section {
   padding: 80px 0;
   background: radial-gradient(ellipse at 50% 50%, #1b2735 0%, #090a0f 80%);
@@ -395,7 +448,6 @@ header {
   display: flex;
   align-items: center;
   gap: 60px;
-  /* Gunakan .container yang sudah ada */
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -404,7 +456,7 @@ header {
 }
 
 .divisi-content {
-  flex: 1; /* Ambil 1 bagian */
+  flex: 1;
 }
 
 .divisi-content h2 {
@@ -417,7 +469,7 @@ header {
 
 .divisi-content p {
   font-size: 18px;
-  color: #b8b8b8; /* Warna p yang sudah ada */
+  color: #b8b8b8;
   line-height: 1.6;
   max-width: 450px;
   margin-bottom: 30px;
@@ -428,35 +480,13 @@ header {
   gap: 15px;
 }
 
-/* Style Tombol Secondary (baru) 
-  Ini untuk "Karya Students"
-*/
-.cta-button.secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  box-shadow: none; /* Hilangkan shadow ungu */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px); /* Samakan hover effect */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Grid Testimoni Kanan 
-*/
 .divisi-grid {
-  flex: 1.2; /* Ambil 1.2 bagian (sedikit lebih lebar) */
+  flex: 1.2;
   display: flex;
   gap: 20px;
-
-  /* Ini adalah 'jendela' untuk scrolling */
-  height: 500px; /* Tentukan tinggi agar bisa di-scroll */
+  height: 500px;
   overflow: hidden;
   position: relative;
-
-  /* Efek FADE (atas & bawah) agar scrolling terlihat mulus */
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
@@ -485,7 +515,7 @@ header {
 
 .divisi-card {
   background: #ffffff;
-  color: #1e293b; /* Teks gelap */
+  color: #1e293b;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -502,16 +532,17 @@ header {
   display: flex;
   align-items: center;
 }
+
 .divisi-card .divisi-profile img {
   width: 235px;
   height: 130px;
   margin-right: 12px;
   padding: auto;
-  border-radius: 10%;
-  border: none;
+  border-radius: 10px;
+  object-fit: cover; /* Agar gambar tidak gepeng */
 }
 
-/* Pastikan @keyframes ini ada */
+/* Animasi Scroll */
 @keyframes scrollDown {
   0% {
     transform: translateY(-50%);
@@ -530,7 +561,6 @@ header {
   }
 }
 
-/* Pastikan class ini ada */
 .scroll-down {
   animation: scrollDown 20s linear infinite;
 }
@@ -539,62 +569,9 @@ header {
   animation: scrollUp 20s linear infinite;
 }
 
-/* Pastikan ada :hover untuk pause */
-.grid-column:hover {
-  animation-play-state: paused !important;
-}
-
-/* ================================================= */
-/* ==   RESPONSIVE UNTUK DIVISI SECTION (MOBILE)  == */
-/* ================================================= */
-
-@media (max-width: 768px) {
-  /* 1. Tumpuk layout utama (teks di atas, grid di bawah) */
-  .divisi-container {
-    flex-direction: column; /* Menumpuk vertikal */
-    gap: 40px;
-  }
-
-  /* 2. Pusatkan konten teks */
-  .divisi-content {
-    text-align: center;
-  }
-
-  /* Pindahkan tombol CTA ke tengah */
-
-  /* 3. Perbaiki grid itu sendiri */
-  .divisi-grid {
-    flex-direction: column; /* Tumpuk kolom kiri & kanan */
-    height: auto; /* Hapus tinggi tetap agar semua card terlihat */
-    overflow: visible; /* Hapus overflow (untuk scroll) */
-    mask-image: none; /* Hapus efek fade */
-    -webkit-mask-image: none;
-    width: 100%;
-  }
-
-  /* 4. HENTIKAN ANIMASI SCROLL (SANGAT PENTING) */
-  .grid-column {
-    animation: none !important; /* Mematikan animasi scroll */
-  }
-
-  /* 5. Pastikan card lebarnya penuh */
-  .divisi-card {
-    width: 100%;
-  }
-
-  /* 6. Perbaiki ukuran font judul di card */
-  .divisi-card h3 {
-    font-size: 18px; /* Sedikit lebih kecil agar rapi */
-    /* Ini untuk judul yang panjang di card terakhir */
-    line-height: 1.4;
-  }
-
-  .grid-column > .divisi-card:nth-child(n + 4) {
-    display: none; /* Sembunyikan! */
-  }
-}
-
-/* Footer */
+/* ========================================= */
+/* 9. FOOTER */
+/* ========================================= */
 footer {
   text-align: center;
   padding: 40px 0;
@@ -602,25 +579,58 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
+/* ========================================= */
+/* 10. RESPONSIVE (MEDIA QUERIES) */
+/* ========================================= */
 @media (max-width: 768px) {
+  /* Global Responsive */
   .hero h1 {
     font-size: 36px;
   }
-
   .hero p {
     font-size: 16px;
   }
-
   .steps h2,
   .categories h2 {
     font-size: 28px;
   }
-
   .categories-grid,
   .steps-container {
     grid-template-columns: 1fr;
   }
+
+  /* Divisi Section Responsive */
+  .divisi-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .divisi-content {
+    text-align: center;
+  }
+  .divisi-cta {
+    justify-content: center;
+  }
+
+  .divisi-grid {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+    width: 100%;
+  }
+  .grid-column {
+    animation: none !important;
+  }
+  .divisi-card {
+    width: 100%;
+  }
+  .divisi-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  /* Sembunyikan duplikat js di mobile */
+  .grid-column > .divisi-card:nth-child(n + 4) {
+    display: none;
+  }
 }
-
-
