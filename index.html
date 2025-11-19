@@ -12,6 +12,11 @@
     />
 
     <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
   </head>
   <body>
     <div id="space"></div>
@@ -49,7 +54,9 @@
 
           <div class="steps-container">
             <div class="step-card">
-              <div class="step-number">🎯</div>
+              <div class="step-number">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
               <h3>Akurat & Cerdas</h3>
               <p>
                 Algoritma cerdas kami menganalisis jawabanmu untuk memberikan
@@ -58,7 +65,9 @@
             </div>
 
             <div class="step-card">
-              <div class="step-number">⏱️</div>
+              <div class="step-number">
+                <i class="fa-solid fa-stopwatch"></i>
+              </div>
               <h3>Hemat Waktu</h3>
               <p>
                 Tinggalkan kebingungan. Dapatkan panduan karir yang jelas dalam
@@ -67,7 +76,9 @@
             </div>
 
             <div class="step-card">
-              <div class="step-number">💡</div>
+              <div class="step-number">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
               <h3>Interaktif & Menarik</h3>
               <p>
                 Proses quiz didesain agar tidak membosankan, membantumu belajar
@@ -121,17 +132,25 @@
           </p>
           <div class="categories-grid">
             <div class="category-card">
-              <h3>💻 Software & Development</h3>
-              <p>
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3>Software & Development</h3>
+              </div>
+
+              <p class="card-desc">
                 Fokus pada perancangan, pengembangan, dan penerapan produk
                 teknologi, baik itu website, aplikasi, maupun platform edukasi.
               </p>
+
               <div class="skills-chips">
                 <span class="chip">Programming</span>
                 <span class="chip">UI/UX Design</span>
                 <span class="chip">Web Development</span>
                 <span class="chip">EdTech</span>
               </div>
+
               <div class="divisi-list">
                 <h4>Divisi Tersedia:</h4>
                 <div class="divisi-items">
@@ -139,6 +158,7 @@
                   <div class="divisi-item">Education Technology</div>
                 </div>
               </div>
+
               <button
                 class="category-button"
                 onclick="window.location.href='pdquiz.html?category=software'"
@@ -148,10 +168,15 @@
             </div>
 
             <div class="category-card">
-              <h3>📊 Data & AI</h3>
-              <p>
-                Bagi yang tertarik pada pengolahan data, analisis, *machine
-                learning*, dan *data science* untuk mengambil keputusan.
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <h3>Data & AI</h3>
+              </div>
+              <p class="card-desc">
+                Bagi yang tertarik pada pengolahan data, analisis, machine
+                learning, dan data science untuk mengambil keputusan.
               </p>
               <div class="skills-chips">
                 <span class="chip">Analisis Data</span>
@@ -176,8 +201,13 @@
             </div>
 
             <div class="category-card">
-              <h3>🛡️ Cybersecurity</h3>
-              <p>
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Cybersecurity</h3>
+              </div>
+              <p class="card-desc">
                 Khusus untuk yang memiliki minat dalam keamanan siber, baik dari
                 sisi defensif (forensik) maupun ofensif (pentesting).
               </p>
@@ -205,9 +235,14 @@
             </div>
 
             <div class="category-card">
-              <h3>📈 Marketing & Komunikasi</h3>
-              <p>
-                Untuk yang memiliki *passion* di bidang branding, pemasaran
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <h3>Marketing & Komunikasi</h3>
+              </div>
+              <p class="card-desc">
+                Untuk yang memiliki passion di bidang branding, pemasaran
                 digital, media sosial, dan komunikasi publik.
               </p>
               <div class="skills-chips">
@@ -235,8 +270,13 @@
             </div>
 
             <div class="category-card">
-              <h3>💰 Finance & Perbankan</h3>
-              <p>
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3>Finance & Perbankan</h3>
+              </div>
+              <p class="card-desc">
                 Sangat spesifik untuk yang tertarik pada analisis pasar
                 keuangan, valuasi perusahaan, dan manajemen perbankan.
               </p>
@@ -262,8 +302,13 @@
             </div>
 
             <div class="category-card">
-              <h3>🗂️ Bisnis & Operasional</h3>
-              <p>
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h3>Bisnis & Operasional</h3>
+              </div>
+              <p class="card-desc">
                 Mencakup peran pendukung krusial dalam menjalankan perusahaan
                 teknologi, dari manajemen proyek, HR, legal, hingga admin.
               </p>
@@ -290,9 +335,15 @@
                 Pilih Kategori
               </button>
             </div>
+
             <div class="category-card">
-              <h3>🧭 Pandu Saya! (Saya Masih Bingung)</h3>
-              <p>
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fa-solid fa-compass"></i>
+                </div>
+                <h3>Pandu Saya! (Saya Masih Bingung)</h3>
+              </div>
+              <p class="card-desc">
                 Belum yakin harus mulai dari mana? Jawab kuis singkat ini untuk
                 mendapatkan rekomendasi kategori yang paling cocok untuk Anda.
               </p>
@@ -304,6 +355,7 @@
               <button
                 class="category-button"
                 onclick="window.location.href='pdquiz.html?category=general'"
+                style="margin-top: 20px"
               >
                 Mulai Tes Minat
               </button>
@@ -383,11 +435,10 @@
 
     <footer>
       <div class="container">
-        <p>&copy; 2024 PT Vinix 7 - Pandu Divisi SGA. All rights reserved.</p>
+        <p>&copy; 2025 PT Vinix 7 - Pandu Divisi SGA. All rights reserved.</p>
       </div>
     </footer>
 
     <script src="index.js"></script>
   </body>
 </html>
-
