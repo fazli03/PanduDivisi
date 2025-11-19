@@ -10,7 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="pdquiz.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
   </head>
   <body>
     <div id="space"></div>
@@ -18,9 +23,7 @@
     <header>
       <div class="container">
         <div class="logo">
-          <a href="pdquiz.html"
-            ><img src="assets/images/Logo.png" alt="Logo"
-          /></a>
+          <a href="index.html"><img src="assets/Logo.png" alt="Logo" /></a>
         </div>
       </div>
     </header>
@@ -33,22 +36,34 @@
             <span id="quiz-category-title"></span>
           </h1>
           <p id="quiz-category-description">
-            Jawab pertanyaan berikut untuk menemukan divisi yang paling cocok
-            dengan passion dan skill Anda.
+            Jawab pertanyaan berikut untuk menemukan divisi yang paling cocok.
           </p>
           <div class="box-btn">
             <a href="index.html" class="cta-button secondary"
               >Kembali ke Home</a
             >
-
             <button class="cta-button" id="start-quiz-btn">Mulai Quiz</button>
+          </div>
+        </div>
+
+        <div class="quiz-screen hidden" id="quiz-intro-basic">
+          <div class="intro-card">
+            <div class="intro-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h2>Tahap 1: Kuis Dasar (Soal 1-5)</h2>
+            <p>
+              5 pertanyaan pertama adalah kuis minat dasar untuk memahami
+              kecenderungan alami Anda.
+            </p>
+            <button class="cta-button" id="continue-to-basic-btn">
+              Saya Mengerti, Lanjutkan!
+            </button>
           </div>
         </div>
 
         <div class="quiz-screen hidden" id="quiz-active-screen">
           <div class="quiz-header">
             <div class="quiz-status">
-              <div id="question-count">Pertanyaan 1 dari 5</div>
+              <div id="question-count">Pertanyaan 1 dari 11</div>
               <div id="quiz-timer">05:00</div>
             </div>
             <div class="progress-bar-container">
@@ -56,19 +71,46 @@
             </div>
           </div>
 
-          <h2 id="question-text">Pertanyaan akan dimuat di sini...</h2>
-
+          <h2 id="question-text">Memuat pertanyaan...</h2>
           <div class="answer-options" id="answer-options-container"></div>
+        </div>
+
+        <div class="quiz-screen hidden" id="quiz-intro-specific">
+          <div class="intro-card">
+            <div class="intro-icon"><i class="fa-solid fa-crosshairs"></i></div>
+            <h2>Tahap 2: Kuis Spesifik (Soal 6-11)</h2>
+            <p>
+              Sekarang kita masuk ke pertanyaan spesifik untuk mengukur
+              pemahaman teknis Anda.
+            </p>
+            <button class="cta-button" id="continue-to-specific-btn">
+              Saya Siap, Lanjutkan!
+            </button>
+          </div>
         </div>
 
         <div class="quiz-screen hidden" id="quiz-results-screen">
           <h2>Hasil Rekomendasi Anda</h2>
+
           <div class="primary-result">
-            <div class="result-score" id="result-score">85%</div>
-            <h3 class="result-division" id="result-division">UI/UX Designer</h3>
-            <p id="result-description">
-              Deskripsi singkat mengapa Anda cocok dengan divisi ini.
-            </p>
+            <div class="result-score" id="final-result-score">0%</div>
+            <h3 class="result-division" id="final-result-division">-</h3>
+            <p id="final-result-description">...</p>
+          </div>
+
+          <div class="results-breakdown">
+            <div class="breakdown-card">
+              <h4>Hasil Kuis Dasar (Q 1-5)</h4>
+              <p>Minat umum Anda condong ke:</p>
+              <div class="breakdown-score" id="basic-result-score">-</div>
+              <strong id="basic-result-division">-</strong>
+            </div>
+            <div class="breakdown-card">
+              <h4>Hasil Kuis Spesifik (Q 6-11)</h4>
+              <p>Pengetahuan teknis Anda kuat di:</p>
+              <div class="breakdown-score" id="specific-result-score">-</div>
+              <strong id="specific-result-division">-</strong>
+            </div>
           </div>
 
           <div class="secondary-results">
