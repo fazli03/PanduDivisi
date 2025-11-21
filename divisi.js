@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: "ut", // Pastikan di detail-divisi.js ada data untuk key 'ut' atau tambahkan nanti
       title: "Divisi Universitas Terbuka",
-      image: "assets/divisi/utr.jpg",
+      image: "assets/utr.jpg",
     },
     {
       id: "general_placement", // Sama, pastikan ada datanya
