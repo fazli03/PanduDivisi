@@ -1,0 +1,173 @@
+/* --- HERO SECTION --- */
+.detail-hero {
+  text-align: center;
+  padding: 60px 0 80px;
+}
+
+.detail-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 0%, #a8b6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.detail-hero .lead {
+  font-size: 18px;
+  color: #b8b8b8;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- CARD UMUM --- */
+.detail-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.detail-card h2 {
+  font-size: 28px;
+  color: #ffd700; /* Aksen Emas */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-card h3 {
+  font-size: 20px;
+  color: #fff;
+  margin: 20px 0 10px;
+}
+
+.detail-card ul, .detail-card ol {
+  padding-left: 20px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.detail-card li {
+  margin-bottom: 10px;
+}
+
+/* --- SPLIT CARD (GAMBAR + TEKS) --- */
+/* --- SPLIT CARD (UPDATE UNTUK IKON) --- */
+.split-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px; /* Jarak antar section */
+}
+
+.split-card.reverse {
+  direction: rtl; 
+}
+.split-card.reverse > * {
+  direction: ltr; 
+}
+
+/* Wadah Ikon Besar */
+.card-media-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 250px; /* Tinggi minimal agar terlihat gagah */
+  background: rgba(255, 255, 255, 0.02); /* Background sangat tipis */
+  border: 1px dashed rgba(255, 255, 255, 0.1); /* Garis putus-putus estetik */
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.card-media-icon:hover {
+  background: rgba(102, 126, 234, 0.05);
+  border-color: #667eea;
+  transform: scale(1.02);
+}
+
+/* Styling Ikon FontAwesome */
+.card-media-icon i {
+  font-size: 100px; /* Ukuran Besar */
+  
+  /* Memberikan warna Gradient pada Ikon */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Efek Glow/Bayangan */
+  filter: drop-shadow(0 10px 30px rgba(102, 126, 234, 0.4));
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .split-card { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    direction: ltr !important; 
+  }
+  
+  /* Di HP, ikon di atas */
+  .card-media-icon { 
+    order: -1; 
+    min-height: 150px; /* Lebih pendek di HP */
+    margin-bottom: 10px;
+  }
+  
+  .card-media-icon i {
+    font-size: 60px; /* Kecilkan ikon di HP */
+  }
+}
+
+/* --- STICKY FOOTER (TOMBOL DAFTAR) --- */
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 30, 0.9);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  z-index: 100;
+  transform: translateY(100%);
+  animation: slideUp 0.5s ease-out 1s forwards;
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info span {
+  font-size: 12px;
+  color: #aaa;
+}
+.footer-info h4 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .detail-hero h1 { font-size: 32px; }
+  .split-card { grid-template-columns: 1fr; gap: 20px; direction: ltr !important; }
+  .card-media { order: -1; /* Gambar selalu di atas di mobile */ }
+  .footer-info { display: none; } /* Sembunyikan info di HP, sisakan tombol */
+  .sticky-footer .container { justify-content: center; }
+  .sticky-footer .cta-button { width: 100%; text-align: center; }
+}

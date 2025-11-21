@@ -1,444 +1,900 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandu Divisi PT Vinix 7</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>VINIX7 - Career Consulting & Internship Program</title>
     <link rel="stylesheet" href="index.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
-    <div id="space"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <svg
+            width="150"
+            height="33"
+            viewBox="0 0 150 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0)">
+              <path
+                d="M128.521 7.56824V-0.00218391L149.824 0.878098V7.92035L138.028 32.3922H128.873L140.669 7.92035L128.521 7.56824Z"
+                fill="#FBE156"
+              />
+              <path
+                d="M9.33099 1.93444H0L11.7958 32.2161H23.4155L32.5704 0.702042L23.4155 1.23021L17.2535 23.7654L9.33099 1.93444Z"
+                fill="#003399"
+              />
+              <path
+                d="M36.4437 31.688L35.5634 0.702042H44.1901L44.8944 31.688H36.4437Z"
+                fill="#003399"
+              />
+              <path
+                d="M49.6479 31.688V0.702041V0.349929H57.9225L69.8944 17.7795L69.3662 -0.00218391H78.3451V31.1598H69.8944L58.2746 14.6105V31.688H49.6479Z"
+                fill="#003399"
+              />
+              <path
+                d="M92.0775 -0.00218391H83.4507L83.2747 31.1598H91.9014L92.0775 -0.00218391Z"
+                fill="#003399"
+              />
+              <path
+                d="M105.282 0.349928H95.5986L105.634 15.6668L95.0704 31.1598L104.754 31.5119L110.035 23.0612L116.021 31.864H126.056L116.021 16.3711L126.232 0.878097H116.373L111.092 9.15275L105.282 0.349928Z"
+                fill="#003399"
+              />
+            </g>
+            <defs>
+              <clip-path id="clip0">
+                <rect
+                  width="150"
+                  height="32.3944"
+                  fill="white"
+                  transform="translate(0 -0.00218391)"
+                />
+              </clip-path>
+            </defs>
+          </svg>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#portfolio">Portofolio</a></li>
+          <li><a href="#program">Program Magang</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
       <div class="container">
-        <div class="logo-vinix">
-          <img src="assets/Logo.png" alt="" />
+        <div class="hero-wrapper">
+          <img
+            src="assets/hero-banner.jpg"
+            alt="Hero Banner"
+            class="hero-image"
+          />
+          <div class="carousel-controls">
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot active"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="logo-pd">
-            <img src="assets/Logo PD.png" alt="" />
-          </div>
-          <p>
-            Sistem rekomendasi cerdas yang membantu calon peserta menemukan
-            divisi yang paling sesuai dengan skill dan minat mereka melalui quiz
-            interaktif berbasis pengetahuan.
-          </p>
-          <a href="#categories" class="cta-button">Mulai Pandu Divisi</a>
-        </div>
-      </section>
-
-      <section class="why-us">
-        <div class="container">
-          <h2>Kenapa Pakai Pandu Divisi?</h2>
-          <p class="why-us-subtitle">
-            Temukan alasan mengapa Pandu Divisi adalah pilihan terbaik untuk
-            memandu langkah karirmu di PT Vinix 7.
-          </p>
-
-          <div class="steps-container">
-            <div class="step-card">
-              <div class="step-number">
-                <i class="fa-solid fa-bullseye"></i>
-              </div>
-              <h3>Akurat & Cerdas</h3>
-              <p>
-                Algoritma cerdas kami menganalisis jawabanmu untuk memberikan
-                rekomendasi divisi yang paling akurat.
-              </p>
-            </div>
-
-            <div class="step-card">
-              <div class="step-number">
-                <i class="fa-solid fa-stopwatch"></i>
-              </div>
-              <h3>Hemat Waktu</h3>
-              <p>
-                Tinggalkan kebingungan. Dapatkan panduan karir yang jelas dalam
-                hitungan menit setelah menyelesaikan quiz.
-              </p>
-            </div>
-
-            <div class="step-card">
-              <div class="step-number">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-              <h3>Interaktif & Menarik</h3>
-              <p>
-                Proses quiz didesain agar tidak membosankan, membantumu belajar
-                sambil menemukan passion-mu.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="steps">
-        <div class="container">
-          <h2>Cara Kerja Pandu Divisi</h2>
-          <div class="steps-container">
-            <div class="step-card">
-              <div class="step-number">1</div>
-              <h3>Pilih Kategori</h3>
-              <p>
-                Pilih kategori divisi yang kamu minati untuk memulai quiz yang
-                disesuaikan dengan bidang tersebut.
-              </p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">2</div>
-              <h3>Jawab Quiz</h3>
-              <p>
-                Jawab pertanyaan seputar pengetahuan dasar dan skill yang kamu
-                miliki. Setiap jawaban akan mengarah ke divisi tertentu.
-              </p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">3</div>
-              <h3>Dapatkan Rekomendasi</h3>
-              <p>
-                Sistem akan menghitung skor dan memberikan rekomendasi divisi
-                yang paling cocok untukmu dengan persentase yang akurat.
-              </p>
-            </div>
-          </div>
-          <div class="cta-center">
-            <a href="#categories" class="cta-button">Mulai Sekarang</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="categories" id="categories">
-        <div class="container">
-          <h2>Pilih Kategori Divisi</h2>
-          <p class="categories-subtitle">
-            Pilih kategori yang paling menarik minatmu untuk memulai quiz
-          </p>
-          <div class="categories-grid">
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <h3>Software & Development</h3>
-              </div>
-
-              <p class="card-desc">
-                Fokus pada perancangan, pengembangan, dan penerapan produk
-                teknologi, baik itu website, aplikasi, maupun platform edukasi.
-              </p>
-
-              <div class="skills-chips">
-                <span class="chip">Programming</span>
-                <span class="chip">UI/UX Design</span>
-                <span class="chip">Web Development</span>
-                <span class="chip">EdTech</span>
-              </div>
-
-              <div class="divisi-list">
-                <h4>Divisi Tersedia:</h4>
-                <div class="divisi-items">
-                  <div class="divisi-item">Web Dev & UIUX</div>
-                  <div class="divisi-item">Education Technology</div>
-                </div>
-              </div>
-
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=software'"
-              >
-                Pilih Kategori
-              </button>
-            </div>
-
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-chart-simple"></i>
-                </div>
-                <h3>Data & AI</h3>
-              </div>
-              <p class="card-desc">
-                Bagi yang tertarik pada pengolahan data, analisis, machine
-                learning, dan data science untuk mengambil keputusan.
-              </p>
-              <div class="skills-chips">
-                <span class="chip">Analisis Data</span>
-                <span class="chip">Python</span>
-                <span class="chip">Machine Learning</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div class="divisi-list">
-                <h4>Divisi Tersedia:</h4>
-                <div class="divisi-items">
-                  <div class="divisi-item">Python Data Scientists</div>
-                  <div class="divisi-item">Data Analyst</div>
-                  <div class="divisi-item">Python Machine Learning</div>
-                </div>
-              </div>
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=data'"
-              >
-                Pilih Kategori
-              </button>
-            </div>
-
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3>Cybersecurity</h3>
-              </div>
-              <p class="card-desc">
-                Khusus untuk yang memiliki minat dalam keamanan siber, baik dari
-                sisi defensif (forensik) maupun ofensif (pentesting).
-              </p>
-              <div class="skills-chips">
-                <span class="chip">Ethical Hacking</span>
-                <span class="chip">Penetration Testing</span>
-                <span class="chip">Forensik Digital</span>
-              </div>
-              <div class="divisi-list">
-                <h4>Divisi Tersedia:</h4>
-                <div class="divisi-items">
-                  <div class="divisi-item">
-                    Cybersecurity (Penetration Tester)
-                  </div>
-                  <div class="divisi-item">Cybersecurity Investigator</div>
-                  <div class="divisi-item">Ethical Hacker (Cybersecurity)</div>
-                </div>
-              </div>
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=cybersecurity'"
-              >
-                Pilih Kategori
-              </button>
-            </div>
-
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-arrow-trend-up"></i>
-                </div>
-                <h3>Marketing & Komunikasi</h3>
-              </div>
-              <p class="card-desc">
-                Untuk yang memiliki passion di bidang branding, pemasaran
-                digital, media sosial, dan komunikasi publik.
-              </p>
-              <div class="skills-chips">
-                <span class="chip">Digital Marketing</span>
-                <span class="chip">Branding</span>
-                <span class="chip">Social Media</span>
-                <span class="chip">Public Relations</span>
-              </div>
-              <div class="divisi-list">
-                <h4>Divisi Tersedia:</h4>
-                <div class="divisi-items">
-                  <div class="divisi-item">Digital Public Diplomacy</div>
-                  <div class="divisi-item">
-                    Digital & Social Media Marketing
-                  </div>
-                  <div class="divisi-item">Brand Design & Marketing</div>
-                </div>
-              </div>
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=marketing'"
-              >
-                Pilih Kategori
-              </button>
-            </div>
-
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-coins"></i>
-                </div>
-                <h3>Finance & Perbankan</h3>
-              </div>
-              <p class="card-desc">
-                Sangat spesifik untuk yang tertarik pada analisis pasar
-                keuangan, valuasi perusahaan, dan manajemen perbankan.
-              </p>
-              <div class="skills-chips">
-                <span class="chip">Analisis Keuangan</span>
-                <span class="chip">Valuasi Perusahaan</span>
-                <span class="chip">Pasar Modal</span>
-              </div>
-              <div class="divisi-list">
-                <h4>Divisi Tersedia:</h4>
-                <div class="divisi-items">
-                  <div class="divisi-item">Financial Market Analyst</div>
-                  <div class="divisi-item">Banking & Finance</div>
-                  <div class="divisi-item">Asset & Liabilities Management</div>
-                </div>
-              </div>
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=finance'"
-              >
-                Pilih Kategori
-              </button>
-            </div>
-
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-briefcase"></i>
-                </div>
-                <h3>Bisnis & Operasional</h3>
-              </div>
-              <p class="card-desc">
-                Mencakup peran pendukung krusial dalam menjalankan perusahaan
-                teknologi, dari manajemen proyek, HR, legal, hingga admin.
-              </p>
-              <div class="skills-chips">
-                <span class="chip">Project Management</span>
-                <span class="chip">Strategi Bisnis</span>
-                <span class="chip">Operasional</span>
-                <span class="chip">HR</span>
-              </div>
-              <div class="divisi-list">
-                <h4>Divisi Tersedia:</h4>
-                <div class="divisi-items">
-                  <div class="divisi-item">Tech Project Management</div>
-                  <div class="divisi-item">Human Resources (SDM) Analyst</div>
-                  <div class="divisi-item">Legal Analyst (Tech Law)</div>
-                  <div class="divisi-item">Bisnis Digital</div>
-                  <div class="divisi-item">Business Admin & Tech Operation</div>
-                </div>
-              </div>
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=business'"
-              >
-                Pilih Kategori
-              </button>
-            </div>
-
-            <div class="category-card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fa-solid fa-compass"></i>
-                </div>
-                <h3>Pandu Saya! (Saya Masih Bingung)</h3>
-              </div>
-              <p class="card-desc">
-                Belum yakin harus mulai dari mana? Jawab kuis singkat ini untuk
-                mendapatkan rekomendasi kategori yang paling cocok untuk Anda.
-              </p>
-              <div class="skills-chips">
-                <span class="chip">Tes Minat</span>
-                <span class="chip">Analisis Diri</span>
-                <span class="chip">Rekomendasi Karir</span>
-              </div>
-              <button
-                class="category-button"
-                onclick="window.location.href='pdquiz.html?category=general'"
-                style="margin-top: 20px"
-              >
-                Mulai Tes Minat
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="divisi-section">
-        <div class="divisi-container">
-          <div class="divisi-content">
-            <h2>Pilih Divisi yang Ingin Kamu Jelajahi <span>😊</span></h2>
-            <p>
-              Temukan struktur, tugas, dan alur kerja dari setiap divisi di
-              Vinix. Mulai dari analitik, bisnis, hingga kreatif semua tersusun
-              rapi untuk membantumu bekerja lebih terarah.
-            </p>
-            <div class="divisi-cta">
-              <a href="#categories" class="cta-button">Jelajahi Divisi</a>
-            </div>
-          </div>
-
-          <div class="divisi-grid">
-            <div class="grid-column left">
-              <div class="divisi-card">
-                <h3>Data Analyst</h3>
-                <div class="divisi-profile">
-                  <img src="assets/dataanalyst.png" alt="Data Analyst" />
-                </div>
-              </div>
-              <div class="divisi-card">
-                <h3>Web Dev & UI/UX</h3>
-                <div class="divisi-profile">
-                  <img src="assets/webuiux.png" alt="Web Dev & UI/UX" />
-                </div>
-              </div>
-              <div class="divisi-card">
-                <h3>Bisnis Digital</h3>
-                <div class="divisi-profile">
-                  <img src="assets/bisnisdigital.png" alt="Bisnis Digital" />
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-column right">
-              <div class="divisi-card">
-                <h3>Python Data Scientists</h3>
-                <div class="divisi-profile">
-                  <img src="assets/pythonds.png" alt="Python Data Scientists" />
-                </div>
-              </div>
-              <div class="divisi-card">
-                <h3>Cybersecurity (Penetration Tester)</h3>
-                <div class="divisi-profile">
-                  <img
-                    src="assets/cybersequrity.png"
-                    alt="Cybersecurity (Penetration Tester)"
-                  />
-                </div>
-              </div>
-              <div class="divisi-card">
-                <h3>
-                  Cybersecurity Investigator (Forensic & Digital Evidence)
-                </h3>
-                <div class="divisi-profile">
-                  <img
-                    src="assets/cyberinvestig.png"
-                    alt="Cybersecurity Investigator (Forensic & Digital Evidence)"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
+    <!-- Who We Are Section -->
+    <section id="about" class="about-section">
       <div class="container">
-        <p>&copy; 2025 PT Vinix 7 - Pandu Divisi SGA. All rights reserved.</p>
+        <div class="about-grid">
+          <div class="about-content">
+            <span class="section-label">who we are</span>
+            <h2 class="section-title">
+              Dapatkan Kursi Magang di<br />Perusahaan Secara Pasti!
+            </h2>
+            <p class="section-text">
+              VINIX7 memiliki program magang seru, bekerjasama dengan berbagai
+              perusahaan ternama. Kamu akan mendapatkan penempatan pasti di
+              berbagai pilihan divisi, seperti TikTok agency, cyber security,
+              digital forensic, data science, serta brand marketing & design.
+              Kamu akan belajar langsung lewat proyek nyata dan dibimbing oleh
+              mentor yang siap membantu perkembangan karirmu. Melalui program
+              ini, kamu akan siap untuk menggapai karir yang kamu inginkan.
+              Bergabung bersama kami!
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="assets/team-collaboration.jpg"
+              alt="Team collaboration"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="features-container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"></div>
+            <img src="assets\Automation.png" alt="automation" />
+            <h3>Technology</h3>
+            <p>AI, Cybersecurity, Web Development, and Blockchain.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"></div>
+            <img src="assets\dataprocessing.png" alt="graph business" />
+            <h3>Market Entry & Business</h3>
+            <p>B2B Partnerships, Retail Product Development.</p>
+          </div>
+          <div class="feature-card">
+            <img src="assets\refresh-line.png" alt="refresh-line" />
+            <div class="feature-icon"></div>
+            <h3>Operations & Financing</h3>
+            <p>Talent Management, Financial Support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Magang Divisions Section -->
+    <section id="program" class="program-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Magang Divisions</span>
+          <h2 class="section-title">Pilih Divisi Magang</h2>
+        </div>
+
+        <div class="program-grid">
+          <div class="program-item">
+            <div class="program-content">
+              <h3 class="program-title">Pengolahan data</h3>
+              <p class="program-text">
+                Program pengolahan data ini mencakup pelatihan Artificial
+                Intelligence (AI), Data Science, dan Data Analysis secara
+                terstruktur dan aplikatif. Tujuannya adalah membekali peserta
+                dengan keterampilan praktis yang dibutuhkan di dunia kerja
+                digital, serta meningkatkan daya saing mereka di bidang
+                teknologi data. Peserta akan belajar membuat sistem cerdas
+                dengan AI, mengolah dan menganalisis data dengan Python dan
+                visualisasi, serta menguasai tools praktis seperti Excel, SQL,
+                dan Power BI.
+              </p>
+            </div>
+            <div class="program-image">
+              <img
+                src="assets/data-processing.jpg"
+                alt="Data Processing"
+              />
+            </div>
+          </div>
+
+          <!-- TikTok Micro-Influencer -->
+          <div class="program-item">
+            <div class="program-image">
+              <img
+                src="assets/tiktok-influencer.jpg"
+                alt="TikTok Influencer"
+              />
+            </div>
+            <div class="program-content">
+              <h3 class="program-title">TikTok Micro-Influencer Career</h3>
+              <p class="program-text">
+                Program TikTok Micro-Influencer ini dirancang untuk membantu
+                mahasiswa memanfaatkan platform TikTok sebagai alat pemasaran
+                dan personal branding yang efektif. Peserta akan mempelajari
+                strategi kreatif dalam pembuatan konten, penggunaan fitur TikTok
+                Shop & Keranjang Kuning, serta cara menghasilkan pendapatan
+                melalui TikTok Affiliate dan kolaborasi dengan brand. Melalui
+                pelatihan ini, mereka akan membangun portofolio micro-influencer
+                dan memahami metrik kesuksesan dalam kampanye digital. Program
+                ini bertujuan untuk meningkatkan keterampilan digital generasi
+                muda, membuka peluang baru di era ekonomi digital.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cybersecurity -->
+          <div class="program-item">
+            <div class="program-content">
+              <h3 class="program-title">Cybersecurity dan Digital Forensic</h3>
+              <p class="program-text">
+                Keamanan Siber (termasuk compliance untuk Undang-Undang
+                Perlindungan Data Pribadi dengan cybersecurity awareness untuk
+                karyawan non-IT dan juga Security Operation System, Penetration
+                Testing, ISO 27001, IT Audit) dan Digital Forensik.
+              </p>
+            </div>
+            <div class="program-image">
+              <img src="assets/cybersecurity.jpg" alt="Cybersecurity" />
+            </div>
+          </div>
+          <!-- Innovation -->
+          <div class="program-item">
+            <div class="program-image">
+              <img src="assets/innovation.jpg" alt="Innovation" />
+            </div>
+            <div class="program-content">
+              <h3 class="program-title">Innovation</h3>
+              <p class="program-text">
+                Blockchain development is the process of developing and
+                maintaining a blockchain platform. This involves creating the
+                infrastructure that allows for the creation and management of
+                blockchain-based applications and services, such as digital
+                currencies, smart contracts, and distributed applications.
+              </p>
+            </div>
+          </div>
+
+          <!-- Operations and Financing -->
+          <div class="program-item">
+            <div class="program-content">
+              <h3 class="program-title">Operations and Financing.</h3>
+              <p class="program-text">
+                Kami adalah operating partner yang membantu merencanakan
+                recruitment talent, tax planning, perpajakan, pengelolaan
+                keuangan, project, operational day-to-day dan juga financing
+                untukpembiayaan perusahaan
+              </p>
+            </div>
+            <div class="program-image large">
+              <img src="assets/operations.jpg" alt="Operations" />
+            </div>
+          </div>
+
+          <!-- Market Entry B2B -->
+          <div class="program-item">
+            <div class="program-image large">
+              <img src="assets/market-entry.jpg" alt="Market Entry" />
+            </div>
+            <div class="program-content">
+              <h3 class="program-title">Market Entry B2B.</h3>
+              <p class="program-text">
+                Kami adalah partner yang membantu perusahaan baru untuk membuka
+                pasar baru dan bekerjasama dengan mitra dan klien kami untuk
+                membuka peluang business yang bermanfaat profitable dan
+                sustainable (berkelanjutan).
+              </p>
+            </div>
+          </div>
+
+          <!-- Website Building -->
+          <div class="program-item">
+            <div class="program-content">
+              <h3 class="program-title">Website Building</h3>
+              <p class="program-text">
+                Enterprise Resource Plannning (ERP), E-commerce, Learning
+                Management System, Digital Forensic Tools, Mobile Development
+                (Android dan IoS).
+              </p>
+            </div>
+            <div class="program-image large">
+              <img
+                src="assets/website-building.jpg"
+                alt="Website Building"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Pengolahan Data -->
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="partners-section-header">
+          <h2 class="section-title">Klien Dan Mitra Kami</h2>
+          <p class="partners-subtitle">
+            Kami bangga bekerja sama dengan berbagai perusahaan terkemuka
+            yang<br />
+            mencerminkan keberagaman dan kekuatan industri.
+          </p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-logo">
+            <img src="assets/partners/logo-1.png" alt="Partner 1" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-2.png" alt="Partner 2" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-3.png" alt="Partner 3" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-4.png" alt="Partner 4" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-5.png" alt="Partner 5" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-6.png" alt="Partner 6" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-7.png" alt="Partner 7" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-8.png" alt="Partner 8" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-9.png" alt="Partner 9" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-10.png" alt="Partner 10" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-11.png" alt="Partner 11" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-12.png" alt="Partner 12" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-13.png" alt="Partner 13" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-14.png" alt="Partner 14" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-15.png" alt="Partner 15" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-16.png" alt="Partner 16" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-17.png" alt="Partner 17" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-18.png" alt="Partner 18" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-19.png" alt="Partner 19" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-20.png" alt="Partner 20" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-21.png" alt="Partner 21" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-22.png" alt="Partner 22" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-23.png" alt="Partner 23" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-24.png" alt="Partner 24" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-25.png" alt="Partner 25" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-26.png" alt="Partner 26" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-27.png" alt="Partner 27" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-28.png" alt="Partner 28" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-29.png" alt="Partner 29" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-30.png" alt="Partner 30" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-31.png" alt="Partner 31" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-32.png" alt="Partner 32" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-33.png" alt="Partner 33" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-34.png" alt="Partner 34" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-35.png" alt="Partner 35" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-36.png" alt="Partner 36" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-37.png" alt="Partner 37" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-38.png" alt="Partner 38" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-39.png" alt="Partner 39" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-40.png" alt="Partner 40" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-41.png" alt="Partner 41" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-42.png" alt="Partner 42" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-43.png" alt="Partner 43" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-44.png" alt="Partner 44" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-45.png" alt="Partner 45" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-46.png" alt="Partner 46" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-47.png" alt="Partner 47" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-48.png" alt="Partner 48" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-49.png" alt="Partner 49" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-50.png" alt="Partner 50" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-51.png" alt="Partner 51" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-52.png" alt="Partner 52" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-53.png" alt="Partner 53" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-54.png" alt="Partner 54" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-55.png" alt="Partner 55" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-56.png" alt="Partner 56" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-57.png" alt="Partner 57" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-58.png" alt="Partner 58" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-59.png" alt="Partner 59" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-60.png" alt="Partner 60" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-61.png" alt="Partner 61" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-62.png" alt="Partner 62" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-63.png" alt="Partner 63" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-64.png" alt="Partner 64" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-65.png" alt="Partner 65" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-66.png" alt="Partner 66" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-67.png" alt="Partner 67" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-68.png" alt="Partner 68" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-69.png" alt="Partner 69" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-70.png" alt="Partner 70" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-71.png" alt="Partner 71" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-72.png" alt="Partner 72" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-73.png" alt="Partner 73" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-74.png" alt="Partner 74" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-75.png" alt="Partner 75" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-76.png" alt="Partner 76" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-77.png" alt="Partner 77" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-78.png" alt="Partner 78" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-79.png" alt="Partner 79" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-80.png" alt="Partner 80" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-81.png" alt="Partner 81" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-82.png" alt="Partner 82" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-83.png" alt="Partner 83" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-84.png" alt="Partner 84" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-85.png" alt="Partner 85" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-86.png" alt="Partner 86" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-87.png" alt="Partner 87" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-88.png" alt="Partner 88" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-89.png" alt="Partner 89" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-90.png" alt="Partner 90" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-91.png" alt="Partner 91" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-92.png" alt="Partner 92" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-93.png" alt="Partner 93" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-94.png" alt="Partner 94" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-95.png" alt="Partner 95" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-96.png" alt="Partner 96" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-97.png" alt="Partner 97" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-98.png" alt="Partner 98" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-99.png" alt="Partner 99" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-100.png" alt="Partner 100" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-101.png" alt="Partner 101" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-102.png" alt="Partner 102" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-103.png" alt="Partner 103" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-104.png" alt="Partner 104" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-105.png" alt="Partner 105" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-106.png" alt="Partner 106" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-107.png" alt="Partner 107" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-108.png" alt="Partner 108" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-109.png" alt="Partner 109" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-110.png" alt="Partner 110" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-111.png" alt="Partner 111" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-112.png" alt="Partner 112" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-113.png" alt="Partner 113" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-114.png" alt="Partner 114" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-115.png" alt="Partner 115" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-116.png" alt="Partner 116" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-117.png" alt="Partner 117" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-118.png" alt="Partner 118" />
+          </div>
+          <div class="partner-logo">
+            <img src="assets/partners/logo-119.png" alt="Partner 119" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <div class="section-header-port">
+          <h2 class="section-title">
+            Handful of items from <br />
+            <span class="highlight">our portfolio.</span>
+          </h2>
+          <a href="#" class="view-all-btn">View All</a>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3 class="card-title">
+                1 Semester Program: Menjadi Data Saintis Pemula untuk Industri
+                4.0
+              </h3>
+              <div class="card-tags">
+                <span class="tag">ILC Learning Center</span>
+                <span class="tag">Studi Independen</span>
+              </div>
+            </div>
+            <img
+              src="assets/portfolio/portfolio-1.jpg"
+              alt="Portfolio 1"
+            />
+          </div>
+
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3 class="card-title">
+                12 Basic Skill yang Dibutuhkan Cloud Computing Security Engineer
+                (Cybersecurity)
+              </h3>
+              <div class="card-tags">
+                <span class="tag">Gama Multi Group</span>
+                <span class="tag">Studi Independen</span>
+              </div>
+            </div>
+            <img
+              src="assets/portfolio/portfolio-2.jpg"
+              alt="Portfolio 2"
+            />
+          </div>
+
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3 class="card-title">
+                3 Joined Project - Creating Digital Solutions & Transformation
+                for Sustainable Agriculture Management Mobile Apps
+              </h3>
+              <div class="card-tags">
+                <span class="tag">The President</span>
+                <span class="tag">Studi Independen</span>
+              </div>
+            </div>
+            <img
+              src="assets/portfolio/portfolio-3.jpg"
+              alt="Portfolio 3"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-floating-bg">
+        <i class="fa-solid fa-graduation-cap float-item item-1"></i>
+        <i class="fa-solid fa-book-open float-item item-2"></i>
+        <i class="fa-solid fa-lightbulb float-item item-3"></i>
+        <i class="fa-solid fa-rocket float-item item-4"></i>
+        <i class="fa-solid fa-gears float-item item-5"></i>
+        <i class="fa-solid fa-pencil float-item item-6"></i>
+      </div>
+
+      <div class="cta-content">
+        <h2>Ayo Wujudkan Pengalaman Magang Yang Seru Bersama Kami!</h2>
+        <p>
+          VINIX7 siap menyediakan pengalaman yang menyenangkan untuk
+          mempersiapkan Gen-Z menuju karir yang gemilang!
+        </p>
+        <a href="#contact" class="cta-button">Visit Now</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Location</h3>
+            <p>Sleman, Yogyakarta, Indonesia</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3>Phone</h3>
+            <p>0877-5977-9655</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>vinix7.idn@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col-main">
+            <a href="#" class="footer-logo">
+              <svg
+                width="150"
+                height="33"
+                viewBox="0 0 150 33"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip1)">
+                  <path
+                    d="M128.521 7.56824V-0.00218391L149.824 0.878098V7.92035L138.028 32.3922H128.873L140.669 7.92035L128.521 7.56824Z"
+                    fill="#FBE156"
+                  />
+                  <path
+                    d="M9.33099 1.93444H0L11.7958 32.2161H23.4155L32.5704 0.702042L23.4155 1.23021L17.2535 23.7654L9.33099 1.93444Z"
+                    fill="#003399"
+                  />
+                  <path
+                    d="M36.4437 31.688L35.5634 0.702042H44.1901L44.8944 31.688H36.4437Z"
+                    fill="#003399"
+                  />
+                  <path
+                    d="M49.6479 31.688V0.702041V0.349929H57.9225L69.8944 17.7795L69.3662 -0.00218391H78.3451V31.1598H69.8944L58.2746 14.6105V31.688H49.6479Z"
+                    fill="#003399"
+                  />
+                  <path
+                    d="M92.0775 -0.00218391H83.4507L83.2747 31.1598H91.9014L92.0775 -0.00218391Z"
+                    fill="#003399"
+                  />
+                  <path
+                    d="M105.282 0.349928H95.5986L105.634 15.6668L95.0704 31.1598L104.754 31.5119L110.035 23.0612L116.021 31.864H126.056L116.021 16.3711L126.232 0.878097H116.373L111.092 9.15275L105.282 0.349928Z"
+                    fill="#003399"
+                  />
+                </g>
+                <defs>
+                  <clip-path id="clip1">
+                    <rect
+                      width="150"
+                      height="32.3944"
+                      fill="white"
+                      transform="translate(0 -0.00218391)"
+                    />
+                  </clip-path>
+                </defs>
+              </svg>
+            </a>
+            <p class="footer-description">
+              VINIX7 adalah perusahaan berbasis career consulting yang
+              berkomitmen membantu peserta menemukan jalur karir yang diimpikan.
+              Dengan fokus pada pengembangan pathway karir, kami menyediakan
+              program magang tematik yang dirancang untuk membekali peserta
+              dengan keterampilan dan pengalaman yang relevan, sehingga mereka
+              dapat memasuki dunia kerja dengan percaya diri.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#program">Program Magang</a></li>
+              <li><a href="#articles">Articles</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Tiktok</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Behance</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-credit">
+            Copyright © 2025 <a href="#">Vinix Seven Indonesia</a> | Powered By
+            <a href="#">Codeinaja</a>
+          </p>
+        </div>
       </div>
     </footer>
+    <a href="homepd.html" class="pandu-widget">
+      <div class="pandu-logo-wrapper">
+        <img
+          src="assets/Logo PD.png"
+          alt="Pandu Divisi Logo"
+          class="pandu-logo-img"
+        />
+      </div>
 
-    <script src="index.js"></script>
+      <div class="pandu-hover-card">
+        <div class="card-header">
+          <span class="emoji">💡</span>
+          <span class="title">Masih bingung?</span>
+        </div>
+        <p class="desc">
+          Cek kecocokanmu sekarang! <br />
+          <strong>Ayo kunjungi Pandu Divisi.</strong>
+        </p>
+
+        <div class="arrow-pointer"></div>
+      </div>
+    </a>
   </body>
 </html>

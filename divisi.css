@@ -1,0 +1,155 @@
+/* --- SECTION HEADER --- */
+.catalog-section {
+  padding: 40px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff 0%, #a8b6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #b8b8b8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- SEARCH BAR --- */
+.search-container {
+  max-width: 500px;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 15px 20px 15px 50px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 18px;
+}
+
+/* --- GRID LAYOUT (INTI TAMPILAN) --- */
+.divisi-grid-container {
+  display: grid;
+  /* Auto-fit: Otomatis mengisi kolom sebanyak mungkin. 
+     Min 280px: Lebar minimal kartu sebelum turun baris. */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* --- KARTU DIVISI --- */
+.divisi-item-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden; /* Agar gambar tidak keluar radius */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+}
+
+.divisi-item-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #667eea;
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+/* Bagian Gambar */
+.card-thumb {
+  height: 160px;
+  width: 100%;
+  background: #1a1a2e; /* Placeholder color */
+  position: relative;
+  overflow: hidden;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gambar memenuhi kotak tanpa gepeng */
+  transition: transform 0.5s ease;
+}
+
+.divisi-item-card:hover .card-thumb img {
+  transform: scale(1.1); /* Zoom effect saat hover */
+}
+
+/* Bagian Konten Teks */
+.card-details {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-details h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: #fff;
+  min-height: 50px; /* Menjaga tinggi judul setara */
+}
+
+.btn-daftar-divisi {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid #667eea;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-daftar-divisi:hover {
+  background: #667eea;
+  color: #fff;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .section-header h1 { font-size: 32px; }
+  .divisi-grid-container { grid-template-columns: 1fr; /* 1 kolom di HP */ }
+}

@@ -367,3 +367,54 @@ main {
 .intro-card p:last-of-type {
   margin-bottom: 40px;
 }
+
+/* --- KARTU REKOMENDASI (ACTION CARD) --- */
+.recommendation-card {
+  margin: 30px 0;
+  background: linear-gradient(
+    145deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  border: 1px solid rgba(102, 126, 234, 0.5); /* Border ungu */
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Label kecil di atas */
+.recommend-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffd700; /* Warna emas */
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 700;
+}
+
+/* Nama Divisi di Card */
+.recommendation-card h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Tombol CTA Besar */
+.cta-button.primary-full {
+  width: 100%;
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+  font-size: 16px;
+  padding: 15px;
+}
+
+.cta-button.primary-full:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.7);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Divisi - Vinix 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="homepd.css" />
+    <link rel="stylesheet" href="detail-divisi.css" />
+  </head>
+  <body>
+    <div id="space"></div>
+
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="homepd.html"><img src="assets/Logo.png" alt="Logo" /></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="detail-content" class="container">
+        <div style="text-align: center; padding: 100px; color: #aaa">
+          <i class="fa-solid fa-circle-notch fa-spin fa-2x"></i>
+          <p style="margin-top: 20px">Memuat Informasi Divisi...</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="sticky-footer">
+      <div class="container footer-flex">
+        <div class="footer-info">
+          <span>Tertarik bergabung?</span>
+          <h4 id="sticky-divisi-name">${data.title}</h4>
+        </div>
+        <a href="pendaftaran.html?divisi=${divisionId}" class="cta-button">
+          Daftar Sekarang <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 PT Vinix 7 - Pandu Divisi SGA. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="homepd.js"></script>
+    <script src="detail-divisi.js"></script>
+  </body>
+</html>

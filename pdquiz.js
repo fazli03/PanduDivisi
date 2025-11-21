@@ -31,7 +31,7 @@ let scores = {};
 let basicScores = {}; // Menyimpan skor tahap 1
 let resultData = {};
 
-let currentQuestionIndex = 0;
+let currentQuestionindex = 0;
 let timerInterval;
 let timeRemaining = 300;
 const totalTime = 300;
@@ -1497,7 +1497,7 @@ function startQuiz() {
   quizStartScreen.classList.add("hidden");
   quizIntroBasicScreen.classList.remove("hidden");
 
-  currentQuestionIndex = 0;
+  currentQuestionindex = 0;
   scores = {};
   basicScores = {};
   progressBar.style.width = "0%";
@@ -1533,13 +1533,13 @@ function showQuestion() {
     return;
   }
 
-  const q = quizData[currentQuestionIndex];
+  const q = quizData[currentQuestionindex];
   questionText.innerText = q.question;
 
-  const progressPercent = (currentQuestionIndex / quizData.length) * 100;
+  const progressPercent = (currentQuestionindex / quizData.length) * 100;
   progressBar.style.width = `${progressPercent}%`;
 
-  questionCountText.innerText = `Pertanyaan ${currentQuestionIndex + 1} dari ${
+  questionCountText.innerText = `Pertanyaan ${currentQuestionindex + 1} dari ${
     quizData.length
   }`;
 
@@ -1561,20 +1561,20 @@ function selectAnswer(points) {
   }
 
   // Simpan skor dasar setelah soal ke-5
-  if (currentQuestionIndex === 4) {
+  if (currentQuestionindex === 4) {
     basicScores = { ...scores };
   }
 
-  currentQuestionIndex++;
+  currentQuestionindex++;
 
   // Cek Logika Pindah Halaman
   const SOAL_DASAR_SELESAI = 5;
 
-  if (currentQuestionIndex === SOAL_DASAR_SELESAI) {
+  if (currentQuestionindex === SOAL_DASAR_SELESAI) {
     // Jeda: Tampilkan Intro Spesifik
     quizActiveScreen.classList.add("hidden");
     quizIntroSpecificScreen.classList.remove("hidden");
-  } else if (currentQuestionIndex < quizData.length) {
+  } else if (currentQuestionindex < quizData.length) {
     // Lanjut soal biasa
     showQuestion();
   } else {
@@ -1684,10 +1684,15 @@ function showResults() {
     ).innerText = `Anda menunjukkan minat bakat terkuat di kategori ini.`;
 
     showGeneralResultsButtons(finalAnalysis.topKey);
+    // ... (Di dalam function showResults) ...
   } else {
+    // --- HASIL UNTUK KUIS DIVISI (NORMAL) ---
+
+    // Tampilkan elemen standar
     if (secondaryBox) secondaryBox.style.display = "block";
     if (boxBtnFinish) boxBtnFinish.style.display = "flex";
 
+    // 1. Update Teks Hasil Utama (Sama seperti sebelumnya)
     if (finalAnalysis.topKey && resultData[finalAnalysis.topKey]) {
       document.getElementById(
         "final-result-score"
@@ -1696,13 +1701,32 @@ function showResults() {
         resultData[finalAnalysis.topKey].name;
       document.getElementById("final-result-description").innerText =
         resultData[finalAnalysis.topKey].description;
+
+      // ============================================================
+      // == LOGIKA BARU: TAMPILKAN KARTU REKOMENDASI DI ATAS TOMBOL ==
+      // ============================================================
+      const recContainer = document.getElementById("recommendation-container");
+
+      recContainer.innerHTML = `
+        <div class="recommendation-card">
+          <span class="recommend-label"><i class="fa-solid fa-star"></i> Rekomendasi Program</span>
+          <h3>${resultData[finalAnalysis.topKey].name}</h3>
+          
+          <a href="detail-divisi.html?id=${
+            finalAnalysis.topKey
+          }" class="cta-button primary-full">
+            Lihat Detail Divisi & Daftar <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      `;
+      // ============================================================
     } else {
+      // Fallback error...
       document.getElementById("final-result-score").innerText = "N/A";
-      document.getElementById("final-result-division").innerText =
-        "Tidak Ditemukan";
+      // ...
     }
 
-    // Secondary List
+    // 2. Tampilkan Hasil Sekunder (Tetap sama)
     secondaryResultsList.innerHTML = "";
     for (const division in scores) {
       if (division !== finalAnalysis.topKey && resultData[division]) {

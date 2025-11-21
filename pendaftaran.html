@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran MSIB - Vinix 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="pendaftaran.css" />
+  </head>
+  <body>
+    <div id="space"></div>
+
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="homepd.html"><img src="assets/Logo.png" alt="Logo" /></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="form-container">
+        <div class="form-header">
+          <h1>Formulir Pendaftaran MSIB</h1>
+          <p>Langkah 1 dari 5: Data Diri & Pilihan Program</p>
+
+          <div class="segmented-progress">
+            <div class="progress-step" id="prog-1"></div>
+            <div class="progress-step" id="prog-2"></div>
+            <div class="progress-step" id="prog-3"></div>
+            <div class="progress-step" id="prog-4"></div>
+            <div class="progress-step" id="prog-5"></div>
+          </div>
+        </div>
+
+        <form id="registration-form">
+          <div class="form-step" id="step-1">
+            <div class="form-section">
+              <h3><i class="fa-solid fa-user"></i> Data Mahasiswa</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Nama Lengkap</label>
+                  <input
+                    type="text"
+                    placeholder="Masukkan nama lengkap"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Universitas</label>
+                  <input type="text" placeholder="Nama Universitas" required />
+                </div>
+                <div class="form-group">
+                  <label>Fakultas</label>
+                  <input type="text" placeholder="Nama Fakultas" required />
+                </div>
+                <div class="form-group">
+                  <label>Program Studi</label>
+                  <input type="text" placeholder="Jurusan/Prodi" required />
+                </div>
+                <div class="form-group">
+                  <label>Semester Saat Ini</label>
+                  <input
+                    type="text"
+                    id="input-semester"
+                    inputmode="numeric"
+                    placeholder="Contoh: 5"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Email Mahasiswa</label>
+                  <input
+                    type="email"
+                    placeholder="email@mahasiswa.ac.id"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Nomor WhatsApp Aktif</label>
+                  <input type="tel" placeholder="08xxxxxxxxxx" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>
+                <i class="fa-solid fa-graduation-cap"></i> Konversi SKS & Data
+                Kaprodi
+              </h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Apakah akan diajukan konversi SKS?</label>
+                  <div class="radio-group">
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="konversi_sks"
+                        value="ya"
+                        required
+                      />
+                      <span>Ya, Ajukan</span>
+                    </label>
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="konversi_sks"
+                        value="tidak"
+                        required
+                      />
+                      <span>Tidak</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Apakah sudah izin Kaprodi terkait konversi SKS?</label>
+                  <div class="radio-group">
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="izin_kaprodi"
+                        value="sudah"
+                        required
+                      />
+                      <span>Sudah</span>
+                    </label>
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="izin_kaprodi"
+                        value="belum"
+                        required
+                      />
+                      <span>Belum</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Jenis Perizinan ke Kampus</label>
+                  <div class="radio-group">
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="jenis_izin"
+                        value="magang"
+                        required
+                      />
+                      <span>Magang</span>
+                    </label>
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="jenis_izin"
+                        value="studi_independen"
+                      />
+                      <span>Studi Independen</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Apakah berkenan jika Kaprodi kami hubungi?</label>
+                  <div class="radio-group">
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="hubungi_kaprodi"
+                        value="ya"
+                        required
+                      />
+                      <span>Ya, Berkenan</span>
+                    </label>
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="hubungi_kaprodi"
+                        value="tidak"
+                        required
+                      />
+                      <span>Tidak</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Nama Kaprodi</label>
+                  <input
+                    type="text"
+                    placeholder="Nama Lengkap Kaprodi"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Email Kaprodi</label>
+                  <input
+                    type="email"
+                    placeholder="email@kaprodi.ac.id"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>No. WhatsApp Kaprodi</label>
+                  <input type="tel" placeholder="08xxxxxxxxxx" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3><i class="fa-solid fa-briefcase"></i> Divisi Pilihan</h3>
+
+              <div class="selected-division-box">
+                <p>Anda sedang melakukan pendaftaran untuk divisi:</p>
+
+                <h2 id="display-divisi-name" class="highlight-text">
+                  Memuat Divisi...
+                </h2>
+
+                <input
+                  type="hidden"
+                  id="selected-divisi-input"
+                  name="divisi"
+                  value=""
+                />
+
+                <div style="margin-top: 15px">
+                  <a href="divisi.html" class="change-link">
+                    <i class="fa-solid fa-pen-to-square"></i> Ganti Divisi
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3><i class="fa-solid fa-star"></i> Jenis Program</h3>
+              <div class="info-box">
+                <p>
+                  <i class="fa-solid fa-circle-info"></i>
+                  <strong>Freshgraduate</strong> diharapkan memilih program MBKM
+                  Jalur Mandiri.
+                </p>
+                <a
+                  href="https://drive.google.com/file/d/17p5dbxDiElVNUQBP6P4CFse_T7VyiulI/view?usp=drivesdk"
+                  target="_blank"
+                  class="link-facility"
+                >
+                  <i class="fa-solid fa-download"></i> Lihat Detail Fasilitas
+                  Program
+                </a>
+              </div>
+              <div class="program-grid">
+                <label class="program-card">
+                  <input
+                    type="radio"
+                    name="program_type"
+                    value="non_mbkm"
+                    required
+                  />
+                  <div class="program-inner">
+                    <div class="program-header">
+                      <h4>Non MBKM</h4>
+                      <span class="badge free">Gratis</span>
+                    </div>
+                    <p class="duration">
+                      <i class="fa-regular fa-clock"></i> Durasi 4 Bulan
+                    </p>
+                    <ul class="program-benefits">
+                      <li>Konversi maksimal 4 SKS</li>
+                      <li>Pengalaman kerja riil</li>
+                    </ul>
+                  </div>
+                </label>
+                <label class="program-card">
+                  <input
+                    type="radio"
+                    name="program_type"
+                    value="seleksi_mbkm"
+                    required
+                  />
+                  <div class="program-inner">
+                    <div class="program-header">
+                      <h4>Jalur Seleksi MBKM</h4>
+                      <span class="badge paid">Rp 150.000</span>
+                    </div>
+                    <p class="duration">
+                      <i class="fa-regular fa-clock"></i> Durasi 4-5 Bulan
+                    </p>
+                    <ul class="program-benefits">
+                      <li>Biaya Administrasi</li>
+                      <li>Tes Seleksi Potensi Akademik</li>
+                      <li>Voucher Diskon Rp 200.000 (Prestige)</li>
+                      <li>Konversi maksimal 20 SKS</li>
+                    </ul>
+                  </div>
+                </label>
+                <label class="program-card">
+                  <input
+                    type="radio"
+                    name="program_type"
+                    value="mandiri_mbkm"
+                    required
+                  />
+                  <div class="program-inner">
+                    <div class="program-header">
+                      <h4>Jalur Mandiri MBKM</h4>
+                      <span class="badge premium">Rp 350rb - 3.2jt</span>
+                    </div>
+                    <p class="duration">
+                      <i class="fa-regular fa-clock"></i> Durasi 4/5/6 Bulan
+                    </p>
+                    <ul class="program-benefits">
+                      <li><b>Tanpa Seleksi</b></li>
+                      <li>Memilih paket sesuai kebutuhan</li>
+                      <li>Konversi maksimal 20 SKS</li>
+                      <li>Prioritas Penempatan</li>
+                    </ul>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="cta-button" onclick="nextStep(2)">
+                Lanjut ke Langkah Berikutnya
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step hidden" id="step-2">
+            <div class="form-section">
+              <h3><i class="fa-solid fa-pen-nib"></i> Motivasi & Tujuan</h3>
+              <div class="form-group">
+                <label>Alasan Mengikuti Program</label>
+                <p class="section-desc" style="margin-bottom: 10px">
+                  Ceritakan mengapa Anda tertarik bergabung dengan program ini
+                  dan apa yang memotivasi Anda.
+                </p>
+                <textarea
+                  rows="5"
+                  placeholder="Tuliskan alasan Anda di sini..."
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label>Pekerjaan yang Diinginkan Setelah Lulus</label>
+                <input
+                  type="text"
+                  placeholder="Contoh: UI/UX Designer, Data Scientist, dll."
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>
+                <i class="fa-regular fa-calendar-days"></i> Pilihan Durasi
+                Magang
+              </h3>
+              <p class="section-desc">
+                Pilih durasi komitmen magang yang Anda sanggupi.
+              </p>
+              <div class="radio-group duration-group">
+                <label class="radio-card duration-card">
+                  <input type="radio" name="durasi" value="4_bulan" />
+                  <div class="duration-content">
+                    <span class="dur-number">4</span>
+                    <span class="dur-text">Bulan</span>
+                  </div>
+                </label>
+                <label class="radio-card duration-card">
+                  <input type="radio" name="durasi" value="5_bulan" />
+                  <div class="duration-content">
+                    <span class="dur-number">5</span>
+                    <span class="dur-text">Bulan</span>
+                  </div>
+                </label>
+                <label class="radio-card duration-card">
+                  <input type="radio" name="durasi" value="6_bulan" />
+                  <div class="duration-content">
+                    <span class="dur-number">6</span>
+                    <span class="dur-text">Bulan</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div
+              class="form-navigation"
+              style="justify-content: space-between; display: flex"
+            >
+              <button
+                type="button"
+                class="cta-button secondary"
+                onclick="prevStep(1)"
+              >
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+              </button>
+              <button type="button" class="cta-button" onclick="nextStep(3)">
+                Lanjut ke Langkah 3 <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step hidden" id="step-3">
+            <div class="form-section">
+              <h3>
+                <i class="fa-solid fa-thumbs-up"></i> Tugas 1: Follow Media
+                Sosial
+              </h3>
+              <p class="section-desc">
+                Wajib follow akun resmi Vinix 7 sebelum melanjutkan.
+              </p>
+
+              <div class="social-buttons">
+                <a
+                  href="https://instagram.com/vinix7idn"
+                  target="_blank"
+                  class="social-btn ig"
+                >
+                  <i class="fa-brands fa-instagram"></i> @vinix7idn
+                </a>
+                <a
+                  href="https://tiktok.com/@vinix7idn"
+                  target="_blank"
+                  class="social-btn tiktok"
+                >
+                  <i class="fa-brands fa-tiktok"></i> @vinix7idn
+                </a>
+              </div>
+
+              <div class="form-group" style="margin-top: 20px">
+                <label>Upload Bukti Follow (Screenshot)</label>
+                <div class="file-upload-box small-box">
+                  <input
+                    type="file"
+                    id="file-follow"
+                    accept="image/*"
+                    onchange="previewFileGeneric(this, 'preview-follow')"
+                    required
+                  />
+                  <div class="upload-content" id="preview-follow">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Klik untuk upload bukti follow</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>
+                <i class="fa-solid fa-share-nodes"></i> Tugas 2: Share Info
+              </h3>
+              <p class="section-desc">
+                Bagikan informasi berikut ke minimal 2 Grup WhatsApp
+                (Kampus/Komunitas).
+              </p>
+
+              <div class="broadcast-box">
+                <label class="copy-label-action" onclick="copyBroadcast(this)">
+                  <span id="label-text"
+                    ><i class="fa-regular fa-copy"></i> Klik di sini untuk Salin
+                    Teks Broadcast</span
+                  >
+                </label>
+                <div class="copy-container">
+                  <textarea id="wa-text" readonly>
+🚀 Pendaftaran MSIB (Magang & Studi Independen) Mandiri VINIX7 Batch 4 Resmi Dibuka!
+
+📚 Tingkatkan skill via pengalaman magang & stupen
+👨‍🏫 Mentorship intensif
+🚀 Persiapan karier menuju dunia kerja nyata
+📈 Pilihan 20 Divisi
+📋Sertifikat Magang & Studi Independen
+
+Pilihan Jalur:
+📍NON MBKM (Free)
+📍Jalur Seleksi MBKM
+📍Jalur Mandiri MBKM
+
+📚 Durasi: 4 / 5 / 6 bulan
+🎓 Bisa diajukan konversi hingga 20 SKS!
+
+⏰START: 9 Februari 2026
+📍Link Pendaftaran: https://bit.ly/PendaftaranBatch4vinix7
+Jadilah talenta unggul bersama VINIX7.</textarea
+                  >
+                </div>
+              </div>
+
+              <div class="download-material-box">
+                <label
+                  ><i class="fa-regular fa-image"></i> Download Poster:</label
+                >
+                <div class="poster-preview">
+                  <img src="assets/brosurvinix.jpg" alt="Brosur Vinix 7" />
+                </div>
+                <a
+                  href="assets/brosurvinix.jpg"
+                  download="Brosur_MSIB_Vinix7"
+                  class="cta-button secondary full-width"
+                >
+                  <i class="fa-solid fa-download"></i> Download Gambar Brosur
+                </a>
+              </div>
+
+              <div class="form-group-share">
+                <label>Upload Bukti Share (Gabungan Screenshot / PDF)</label>
+                <div class="file-upload-box">
+                  <input
+                    type="file"
+                    id="file-share"
+                    accept=".pdf,image/*"
+                    onchange="previewFileGeneric(this, 'preview-share')"
+                    required
+                  />
+                  <div class="upload-content" id="preview-share">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                    <span>Klik untuk upload bukti share</span>
+                    <small>Maks. 100 MB (PDF/JPG)</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="form-navigation"
+              style="justify-content: space-between; display: flex"
+            >
+              <button
+                type="button"
+                class="cta-button secondary"
+                onclick="prevStep(2)"
+              >
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+              </button>
+              <button type="button" class="cta-button" onclick="nextStep(4)">
+                Lanjut ke Fasilitas <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step hidden" id="step-4">
+            <div class="form-section">
+              <h3>
+                <i class="fa-solid fa-gem"></i> Pilihan Fasilitas Career
+                Investment
+              </h3>
+              <div class="info-box" style="margin-bottom: 20px">
+                <p>
+                  Pilih paket pengembangan diri selama magang (4 Bulan All-in).
+                </p>
+                <a
+                  href="https://drive.google.com/file/d/17p5dbxDiElVNUQBP6P4CFse_T7VyiulI/view?usp=drivesdk"
+                  target="_blank"
+                  class="link-facility"
+                >
+                  <i class="fa-solid fa-external-link-alt"></i> Lihat Detail
+                  Fasilitas Paket di sini
+                </a>
+              </div>
+              <div class="package-grid">
+                <label class="package-card">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="beginner"
+                    data-price="350000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">Beginner MBKM</div>
+                    <div class="pkg-price">Rp 350.000</div>
+                  </div>
+                </label>
+                <label class="package-card">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="starter"
+                    data-price="650000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">Starter Pack MBKM</div>
+                    <div class="pkg-price">Rp 650.000</div>
+                  </div>
+                </label>
+                <label class="package-card">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="essential"
+                    data-price="850000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">Essential MBKM</div>
+                    <div class="pkg-price">Rp 850.000</div>
+                  </div>
+                </label>
+                <label class="package-card popular">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="vip"
+                    data-price="1200000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="badge-pop">Popular</div>
+                    <div class="pkg-name">VIP MBKM</div>
+                    <div class="pkg-price">Rp 1.200.000</div>
+                  </div>
+                </label>
+                <label class="package-card">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="vvip"
+                    data-price="1500000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">VVIP MBKM</div>
+                    <div class="pkg-price">Rp 1.500.000</div>
+                  </div>
+                </label>
+                <label class="package-card premium">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="prestige"
+                    data-price="1850000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">Prestige Pro Access</div>
+                    <div class="pkg-price">Rp 1.850.000</div>
+                  </div>
+                </label>
+                <label class="package-card premium">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="super_elite"
+                    data-price="2500000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">Super Elite Pro</div>
+                    <div class="pkg-price">Rp 2.500.000</div>
+                  </div>
+                </label>
+                <label class="package-card premium">
+                  <input
+                    type="radio"
+                    name="paket_fasilitas"
+                    value="ultra_pro"
+                    data-price="3000000"
+                  />
+                  <div class="pkg-inner">
+                    <div class="pkg-name">Ultra Pro Access</div>
+                    <div class="pkg-price">Rp 3.000.000</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section text-center">
+              <h3><i class="fa-solid fa-percent"></i> Skema & Promo</h3>
+              <div class="form-group">
+                <label>Skema Pembayaran</label>
+                <div class="radio-group">
+                  <label class="radio-card">
+                    <input type="radio" name="skema_bayar" value="lunas" />
+                    <span>Lunas (Full)</span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="skema_bayar" value="cicilan" />
+                    <span>Cicilan 3x</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Kode Promo (Influencer/Kampus)</label>
+                <div class="promo-input-box">
+                  <input
+                    type="text"
+                    id="promo-code"
+                    placeholder="Masukkan Kode Voucher"
+                  />
+                  <button type="button" class="apply-btn" onclick="cekPromo()">
+                    Gunakan
+                  </button>
+                </div>
+                <small
+                  style="
+                    color: #aaa;
+                    display: block;
+                    margin-top: 5px;
+                    font-size: 12px;
+                  "
+                >
+                  *Diskon Rp 75rb (Paket >1.2jt) | Diskon Rp 125rb (Paket >2jt)
+                </small>
+              </div>
+              <div class="form-group" id="cicilan-options">
+                <label>Pembayaran Cicilan Ke-</label>
+                <div class="radio-group duration-group">
+                  <label class="radio-card duration-card">
+                    <input type="radio" name="cicilan_ke" value="1" />
+                    <div class="duration-content">
+                      <span class="dur-number">1</span>
+                    </div>
+                  </label>
+                  <label class="radio-card duration-card">
+                    <input type="radio" name="cicilan_ke" value="2" />
+                    <div class="duration-content">
+                      <span class="dur-number">2</span>
+                    </div>
+                  </label>
+                  <label class="radio-card duration-card">
+                    <input type="radio" name="cicilan_ke" value="3" />
+                    <div class="duration-content">
+                      <span class="dur-number">3</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section text-center">
+              <h3>
+                <i class="fa-solid fa-qrcode"></i> Pembayaran & Konfirmasi
+              </h3>
+              <div class="qris-container">
+                <div class="qris-frame">
+                  <img
+                    src="assets/qris_payment.png"
+                    alt="QRIS Vinix 7"
+                    class="qris-img"
+                  />
+                </div>
+                <p class="qris-instruction">
+                  Scan QRIS di atas atau download untuk membayar nanti.
+                </p>
+                <a
+                  href="assets/qris_payment.png"
+                  download="QRIS_Vinix7_Payment"
+                  class="cta-button secondary"
+                  style="
+                    width: auto;
+                    display: inline-flex;
+                    gap: 10px;
+                    align-items: center;
+                  "
+                >
+                  <i class="fa-solid fa-download"></i> Download Gambar QRIS
+                </a>
+              </div>
+              <div
+                class="form-group"
+                style="margin-top: 30px; text-align: left"
+              >
+                <label>Upload Bukti Pembayaran</label>
+                <div class="file-upload-box">
+                  <input
+                    type="file"
+                    id="bukti-bayar"
+                    accept="image/*"
+                    required
+                    onchange="previewFile()"
+                  />
+                  <div class="upload-content" id="upload-preview-content">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Klik untuk upload Screenshot Bukti Transfer</span>
+                    <small>Maks. 10 MB (JPG/PNG)</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="form-navigation"
+              style="justify-content: space-between; display: flex"
+            >
+              <button
+                type="button"
+                class="cta-button secondary"
+                onclick="prevStep(3)"
+              >
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+              </button>
+              <button
+                type="button"
+                class="cta-button"
+                onclick="populateFinalReview(); nextStep(5)"
+              >
+                Review Data & Selesai <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step hidden" id="step-5">
+            <div id="review-ui">
+              <div class="form-section">
+                <h3>
+                  <i class="fa-solid fa-clipboard-check"></i> Konfirmasi Data
+                  Pendaftaran
+                </h3>
+                <p class="section-desc">
+                  Mohon periksa kembali ringkasan data Anda sebelum mengirim.
+                </p>
+
+                <div class="summary-card">
+                  <div class="summary-item">
+                    <span class="label">Nama Lengkap</span>
+                    <span class="value" id="rev-nama">-</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="label">Divisi Pilihan</span>
+                    <span class="value highlight" id="rev-divisi">-</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="label">Paket Fasilitas</span>
+                    <span class="value highlight" id="rev-paket">-</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="label">Skema Pembayaran</span>
+                    <span class="value" id="rev-skema">-</span>
+                  </div>
+                  <div class="summary-item total-row">
+                    <span class="label">Total Biaya</span>
+                    <span class="value highlight" id="rev-total">-</span>
+                  </div>
+                </div>
+
+                <div class="checkbox-terms">
+                  <input type="checkbox" id="agree-terms" required />
+                  <label for="agree-terms"
+                    >Saya menyatakan data dan bukti pembayaran adalah
+                    benar.</label
+                  >
+                </div>
+              </div>
+
+              <div
+                class="form-navigation"
+                style="justify-content: space-between; display: flex"
+              >
+                <button
+                  type="button"
+                  class="cta-button secondary"
+                  onclick="prevStep(4)"
+                >
+                  <i class="fa-solid fa-arrow-left"></i> Edit Data
+                </button>
+                <button type="submit" class="cta-button pay-btn-final">
+                  Kirim Pendaftaran <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+
+            <div id="success-ui" class="hidden text-center">
+              <div class="success-icon-lg">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h2>Pendaftaran Berhasil!</h2>
+              <p>
+                Terima kasih telah mendaftar. Tim kami akan memverifikasi data &
+                pembayaran Anda.
+              </p>
+              <div class="invoice-box">
+                <p>ID Registrasi:</p>
+                <h3>VNX-MSIB-2025-889</h3>
+                <p>Silakan cek email Anda secara berkala.</p>
+              </div>
+              <a href="homepd.html" class="cta-button">Kembali ke Beranda</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="error-modal" class="modal hidden">
+        <div class="modal-content error-content">
+          <div class="error-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3>Mohon Lengkapi Data</h3>
+          <p>Terdapat kolom yang belum diisi atau tidak valid:</p>
+
+          <ul id="error-list" class="error-list-style"></ul>
+
+          <button
+            class="cta-button secondary"
+            style="width: 100%; margin-top: 20px"
+            onclick="closeErrorModal()"
+          >
+            Perbaiki Data
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="pendaftaran.js"></script>
+  </body>
+</html>

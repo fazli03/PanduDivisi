@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Divisi - Vinix 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="homepd.css" /> <link rel="stylesheet" href="divisi.css" /> </head>
+  <body>
+    <div id="space"></div>
+
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="homepd.html"><img src="assets/Logo.png" alt="Logo" /></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="catalog-section">
+        <div class="container">
+          <div class="section-header">
+            <h1>Jelajahi Divisi MSIB Vinix 7</h1>
+            <p>
+              Temukan tempat terbaik untuk mengembangkan potensimu. Pilih dari 21
+              divisi yang tersedia sesuai dengan minat dan jurusanmu.
+            </p>
+          </div>
+
+          <div class="search-container">
+            <i class="fa-solid fa-search search-icon"></i>
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Cari nama divisi (contoh: Python, UI/UX, HR)..." 
+              onkeyup="filterDivisi()"
+            />
+          </div>
+
+          <div class="divisi-grid-container" id="divisi-grid">
+            </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 PT Vinix 7 - Pandu Divisi SGA. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="homepd.js"></script> 
+    <script src="divisi.js"></script>
+  </body>
+</html>

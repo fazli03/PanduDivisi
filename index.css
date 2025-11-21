@@ -1,636 +1,1030 @@
-/* ========================================= */
-/* 1. GLOBAL & RESET */
-/* ========================================= */
+/* ============================================
+   1. Global & Typography
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Public+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --primary-blue: #003399;
+  --accent-blue: #336dff;
+  --gradient-blue: linear-gradient(90deg, #003399 0%, #2563eb 100%);
+  --yellow: #fbe156;
+  --white: #ffffff;
+  --bg-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-blue: 0 10px 15px -3px rgba(0, 51, 153, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  overflow-x: hidden;
-  background: #000;
-  color: #fff;
+html {
+  scroll-behavior: smooth;
 }
 
-/* ========================================= */
-/* 2. BACKGROUND ANIMATION */
-/* ========================================= */
-#space {
-  position: fixed;
+body {
+  font-family: "Public Sans", sans-serif; /* Font Body */
+  background: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plus Jakarta Sans", sans-serif; /* Font Judul */
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   2. Navigation
+   ============================================ */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-menu {
+  display: none;
+  list-style: none;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-blue);
+}
+
+/* ============================================
+   3. Hero Section
+   ============================================ */
+.hero {
+  padding: 2rem 0 4rem;
+}
+
+.hero-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-blue);
+  display: block;
+}
+
+/* ============================================
+   4. About Section (Gradient Blue)
+   ============================================ */
+.about-section {
+  background: var(--gradient-blue);
+  padding: 5rem 0;
+  margin: 0 1rem;
+  border-radius: var(--radius-lg);
+  color: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.partners-subtitle {
+  color: white;
+  font-size: 19px;
+  font-weight: 200;
+}
+
+.section-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+/* ============================================
+   5. Features Section
+   ============================================ */
+.features-section {
+  padding: 4rem 0;
+  margin-top: -2rem; /* Overlap effect if needed */
+  position: relative;
+  z-index: 10;
+}
+
+.features-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (min-width: 768px) {
+  .feature-card {
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+  }
+  .feature-card:last-child {
+    border-right: none;
+  }
+}
+
+.feature-icon-img img {
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   6. Program Section
+   ============================================ */
+.program-section {
+  background: var(--gradient-blue);
+  padding: 5rem 0;
+  margin: 3rem 1rem;
+  border-radius: var(--radius-lg);
+  color: white;
+}
+
+.section-header-blue {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .program-item {
+    grid-template-columns: 1fr 1fr;
+  }
+  .program-item.reverse {
+    direction: rtl;
+  }
+  .program-item.reverse .program-content {
+    direction: ltr;
+  }
+}
+
+.program-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.program-image img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   7. Partners Section
+   ============================================ */
+.partners-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section-title-dark {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.section-subtitle-dark {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .partners-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.partners-section-header {
+  padding: 30px 30px;
+  margin-bottom: 50px;
+  background: var(--gradient-blue);
+  border-radius: 10px;
+}
+
+.partner-logo img {
+  max-width: 120px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.partner-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   8. Portfolio Section (FIXED PADDING)
+   ============================================ */
+.portfolio-section {
+  padding: 4rem 0;
+  margin-bottom: 50px;
+}
+
+.section-header-port {
+  text-align: center;
+  padding: 30px 30px;
+  background: var(--gradient-blue);
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.section-header-card {
+  /* CSS Solution from previous advice integrated here */
+  background: var(--gradient-blue);
+  border-radius: var(--radius-lg);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  box-shadow: var(--shadow-blue);
+  margin-bottom: 3rem;
+}
+
+.header-card-title {
+  font-size: 2.2rem;
+  color: white;
+  margin: 0;
+}
+
+.highlight-text {
+  opacity: 0.8;
+}
+
+.view-all-btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 4px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.portfolio-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  background: var(--bg-light);
+  color: var(--primary-blue);
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ============================================
+   9. CTA Section
+   ============================================ */
+.cta-section {
+  background: var(--gradient-blue);
+  margin: 0 1rem 5rem;
+  border-radius: var(--radius-lg);
+  padding: 5rem 1rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-floating-bg {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  pointer-events: none; /* PENTING: Agar ikon tidak bisa diklik dan tidak mengganggu tombol */
+  z-index: 1; /* Layer di belakang konten utama */
 }
 
-.star {
+/* 4. Styling umum untuk semua ikon melayang */
+.float-item {
   position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle linear infinite;
+  color: #ffffff; /* Warna putih */
+  opacity: 0.15; /* Transparan agar samar dan tidak mengganggu (ubah 0.1 - 0.3 sesuai selera) */
+  filter: blur(
+    1px
+  ); /* Sedikit blur agar terkesan jauh di belakang (opsional) */
+  animation: floatAnimation ease-in-out infinite alternate; /* Menerapkan animasi */
 }
 
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.shooting-star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1),
-    0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 8px rgba(255, 255, 255, 1);
-  animation: shoot 3s ease-out infinite;
-}
-
-@keyframes shoot {
+/* 5. Definisi Animasi "Melayang" (Naik Turun & Goyang Dikit) */
+@keyframes floatAnimation {
   0% {
-    transform: translateX(0) translateY(0);
-    opacity: 1;
+    transform: translateY(0) rotate(0deg);
   }
   100% {
-    transform: translateX(-200px) translateY(200px);
-    opacity: 0;
+    /* Bergerak ke atas 30px dan miring 10 derajat */
+    transform: translateY(-30px) rotate(10deg);
   }
 }
 
-/* ========================================= */
-/* 3. LAYOUT & HEADER */
-/* ========================================= */
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* ============================================
+   POSISI & VARIASI MASING-MASING IKON
+   Kita atur posisi berbeda dan durasi animasi berbeda
+   agar gerakannya terlihat alami dan tidak seragam.
+   ============================================ */
+
+/* Topi Toga - Kiri Atas, Besar, Lambat */
+.item-1 {
+  top: 10%;
+  left: 5%;
+  font-size: 5rem;
+  animation-duration: 7s;
 }
 
-header {
-  padding: 10px;
-  margin-top: 30px;
+/* Buku - Kanan Bawah, Sedang */
+.item-2 {
+  bottom: 15%;
+  right: 10%;
+  font-size: 4rem;
+  animation-duration: 5s;
+  animation-delay: 1s;
 }
 
-.logo-vinix img {
-  height: 40px;
-  width: auto;
+/* Lampu - Tengah Atas, Agak Cepat */
+.item-3 {
+  top: 15%;
+  left: 45%;
+  font-size: 3.5rem;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  opacity: 0.1;
 }
 
-/* ========================================= */
-/* 4. HERO SECTION */
-/* ========================================= */
-.hero {
-  text-align: center;
-  padding: 60px 0 60px;
+/* Roket - Kiri Bawah, Besar, Lambat */
+.item-4 {
+  bottom: 20%;
+  left: 15%;
+  font-size: 5.5rem;
+  animation-duration: 8s;
+  animation-delay: 0.5s;
 }
 
-.logo-pd img {
-  width: 235px;
-  height: 235px;
+/* Gears - Kanan Atas, Sedang */
+.item-5 {
+  top: 25%;
+  right: 20%;
+  font-size: 3rem;
+  animation-duration: 6s;
+  animation-delay: 1.5s;
 }
 
-.hero h1 {
-  font-size: 56px;
-  font-weight: 800;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: fadeInUp 1s ease-out;
+/* Pensil - Dekat Tombol, Kecil, Cepat */
+.item-6 {
+  bottom: 35%;
+  left: 55%;
+  font-size: 2.5rem;
+  animation-duration: 3.5s;
+  animation-delay: 0.8s;
+  opacity: 0.1;
+}
+.cta-content h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+.cta-content p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-.hero p {
-  font-size: 20px;
-  color: #b8b8b8;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-  animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ========================================= */
-/* 5. WHY US & STEPS SECTIONS */
-/* ========================================= */
-.why-us,
-.steps {
-  padding: 60px 0;
-  animation: fadeInUp 1s ease-out 0.5s both;
-}
-
-.why-us h2,
-.steps h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.why-us-subtitle {
-  text-align: center;
-  color: #b8b8b8;
-  margin-bottom: 50px;
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.steps-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.step-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
-}
-
-.step-number {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.step-number i {
-  font-size: 24px;
-  color: #fff;
-}
-
-.step-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.step-card p {
-  color: #b8b8b8;
-  line-height: 1.6;
-}
-
-/* ========================================= */
-/* 6. CATEGORIES SECTION (FIXED LAYOUT) */
-/* ========================================= */
-.categories {
-  padding: 80px 0;
-  animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.categories h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.categories-subtitle {
-  text-align: center;
-  color: #b8b8b8;
-  margin-bottom: 50px;
-  font-size: 18px;
-}
-
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-/* --- CARD UTAMA (Flex Column untuk dorong tombol ke bawah) --- */
-.category-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Penting agar semua kartu tingginya sama */
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 30px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.category-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
-  border-color: rgba(102, 126, 234, 0.5);
-}
-
-.category-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-}
-
-/* --- HEADER CARD (Ikon + Judul Sejajar) --- */
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 15px;
-  flex-shrink: 0; /* Header tidak boleh mengecil */
-}
-
-.card-icon {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-
-.card-icon i {
-  font-size: 24px;
-  color: #a8b6ff;
-}
-
-.card-header h3 {
-  font-size: 24px;
-  color: #fff;
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* --- DESKRIPSI (Di bawah Header) --- */
-.category-card p {
-  color: #b8b8b8;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  font-size: 16px;
-  flex-grow: 0;
-}
-
-/* --- SKILLS & LIST --- */
-.skills-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.chip {
-  padding: 8px 16px;
-  background: rgba(102, 126, 234, 0.2);
-  border: 1px solid rgba(102, 126, 234, 0.4);
-  border-radius: 20px;
-  font-size: 13px;
-  color: #a8b6ff;
-}
-
-.divisi-list {
-  margin-bottom: 25px;
-}
-
-.divisi-list h4 {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.divisi-items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.divisi-item {
-  color: #ccc;
-  font-size: 15px;
-  padding-left: 20px;
-  position: relative;
-}
-
-.divisi-item::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: #667eea;
-}
-
-/* ========================================= */
-/* 7. BUTTONS */
-/* ========================================= */
 .cta-button {
   display: inline-block;
-  padding: 18px 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 1rem 3rem;
+  background: var(--white);
+  color: var(--primary-blue);
   text-decoration: none;
   border-radius: 50px;
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-  border: none;
-  cursor: pointer;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  transition: transform 0.2s;
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-}
-
-.cta-center {
-  text-align: center;
-}
-
-.cta-button.secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* --- TOMBOL KHUSUS KATEGORI (DI BAWAH CARD) --- */
-.category-button {
-  margin-top: auto; /* KUNCI: Mendorong tombol ke dasar kartu */
-  width: 100%;
-  text-align: center;
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  margin-bottom: 0;
-}
-
-.category-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
 }
 
-/* ========================================= */
-/* 8. DIVISI SECTION (SCROLLING GRID) */
-/* ========================================= */
-.divisi-section {
-  padding: 80px 0;
-  background: radial-gradient(ellipse at 50% 50%, #1b2735 0%, #090a0f 80%);
+/* ============================================
+   10. Contact Section (NEW Font Awesome Styles)
+   ============================================ */
+.contact-section {
+  background: white;
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color);
 }
 
-.divisi-container {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.divisi-content {
-  flex: 1;
-}
-
-.divisi-content h2 {
-  font-size: 42px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.divisi-content p {
-  font-size: 18px;
-  color: #b8b8b8;
-  line-height: 1.6;
-  max-width: 450px;
-  margin-bottom: 30px;
-}
-
-.divisi-cta {
-  display: flex;
-  gap: 15px;
-}
-
-.divisi-grid {
-  flex: 1.2;
-  display: flex;
-  gap: 20px;
-  height: 500px;
-  overflow: hidden;
-  position: relative;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-  );
-}
-
-.grid-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.grid-column:hover {
-  animation-play-state: paused !important;
-}
-
-.divisi-card {
-  background: #ffffff;
-  color: #1e293b;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 280px;
-}
-
-.divisi-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.divisi-card .divisi-profile {
-  display: flex;
-  align-items: center;
-}
-
-.divisi-card .divisi-profile img {
-  width: 235px;
-  height: 130px;
-  margin-right: 12px;
-  padding: auto;
-  border-radius: 10px;
-  object-fit: cover; /* Agar gambar tidak gepeng */
-}
-
-/* Animasi Scroll */
-@keyframes scrollDown {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0);
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
   }
 }
 
-@keyframes scrollUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-.scroll-down {
-  animation: scrollDown 20s linear infinite;
-}
-
-.scroll-up {
-  animation: scrollUp 20s linear infinite;
-}
-
-/* ========================================= */
-/* 9. FOOTER */
-/* ========================================= */
-footer {
+.contact-card {
   text-align: center;
-  padding: 40px 0;
-  color: #666;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
 }
 
-/* ========================================= */
-/* 10. RESPONSIVE (MEDIA QUERIES) */
-/* ========================================= */
-@media (max-width: 768px) {
-  /* Global Responsive */
-  .hero h1 {
-    font-size: 36px;
+@media (min-width: 768px) {
+  .contact-card {
+    border-right: 1px solid var(--border-color);
   }
-  .hero p {
-    font-size: 16px;
+  .contact-card:last-child {
+    border-right: none;
   }
-  .steps h2,
-  .categories h2 {
-    font-size: 28px;
+}
+
+/* Styling Ikon Font Awesome */
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background: rgba(0, 51, 153, 0.05); /* Biru sangat muda */
+  color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  background: var(--primary-blue);
+  color: white;
+  transform: rotateY(180deg); /* Efek putar modern */
+}
+
+.contact-icon i {
+  transition: transform 0.3s;
+} /* Smooth transition */
+
+/* ============================================
+   11. Footer
+   ============================================ */
+.footer {
+  background: #f8fafc;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
   }
-  .categories-grid,
-  .steps-container {
-    grid-template-columns: 1fr;
+}
+
+.footer-description {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+.footer-col h4 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--primary-blue);
+}
+
+/* Social Icons di Footer */
+.social-links i {
+  margin-right: 8px;
+}
+
+/* Wrapper baru untuk bagian paling bawah */
+.footer-bottom {
+  margin-top: 3rem; /* Jarak dari konten atas */
+  padding-top: 1.5rem; /* Jarak tulisan ke garis batas */
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Garis tipis pemisah */
+  text-align: center; /* KUNCI: Membuat teks rata tengah */
+  width: 100%;
+}
+
+.footer-credit {
+  font-family: "Public Sans", sans-serif;
+  color: #64748b; /* Warna abu-abu soft */
+  font-size: 0.875rem; /* Ukuran font sedikit lebih kecil biar manis */
+  margin: 0;
+}
+
+.footer-credit a {
+  color: #003399; /* Warna biru link */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   UPDATED: Program Section (Horizontal Card Style)
+   ============================================ */
+
+/* 1. Grid Container (Tetap 2 Kolom) */
+.program-grid {
+  display: grid;
+  /* Membuat 2 kolom di layar lebar */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px; /* Jarak antar card (Atas-Bawah 40px, Kiri-Kanan 30px) */
+  margin-top: 40px;
+}
+
+/* 2. Card Layout (Menyamping: Teks Kiri - Gambar Kanan) */
+.program-item {
+  display: flex;
+  flex-direction: row; /* Susun elemen ke samping */
+  align-items: flex-start; /* Rata atas agar rapi */
+  justify-content: space-between;
+
+  /* Visual Style sesuai Gambar Referensi */
+  background: transparent; /* Menyatu dengan background biru section */
+  border: none;
+  box-shadow: none; /* Flat design sesuai gambar */
+  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+.program-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-blue);
+}
+
+/* PENTING: Memaksa urutan agar Teks selalu di Kiri & Gambar selalu di Kanan */
+/* Ini mengatasi HTML kamu yang sebelumnya ada class 'reverse' */
+.program-item .program-content {
+  order: 1; /* Teks urutan pertama */
+}
+.program-item .program-image {
+  order: 2; /* Gambar urutan kedua */
+}
+
+/* 3. Styling Konten Teks */
+.program-content {
+  flex: 1; /* Mengisi sisa ruang sebelah kiri */
+  padding-right: 20px; /* Jarak agar teks tidak menempel gambar */
+}
+
+.program-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.25rem; /* Ukuran judul proporsional */
+  font-weight: 600; /* Bold tebal */
+  color: #ffffff; /* WARNA HITAM (Sesuai Gambar) */
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.program-text {
+  font-family: "Public Sans", sans-serif;
+  font-size: 0.925rem;
+  color: #ffffff; /* WARNA PUTIH (Sesuai Gambar) */
+  font-weight: 300; /* Font agak tipis agar elegan */
+  line-height: 1.6;
+  text-align: justify; /* Opsi: Agar blok teks terlihat rapi */
+}
+
+/* 4. Styling Gambar (Kanan) */
+.program-image {
+  width: 160px; /* Lebar Tetap */
+  height: 120px; /* Tinggi Tetap (PENTING: agar semua kartu tingginya sama) */
+  flex-shrink: 0;
+  overflow: hidden; /* Memastikan gambar tidak bocor keluar */
+  border-radius: 12px; /* Radius dipindah ke container agar lebih rapi */
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%; /* Memaksa gambar memenuhi wadah 160x120 */
+
+  /* --- THE MAGIC SAUCE --- */
+  object-fit: cover;
+  /* Fungsi 'cover': 
+     Memotong (crop) bagian gambar yang berlebih secara otomatis 
+     agar gambar memenuhi kotak tanpa merusak proporsi (tidak penyet).
+  */
+
+  object-position: center; /* Memastikan fokus gambar tetap di tengah */
+  transition: transform 0.5s ease; /* Persiapan untuk efek hover */
+}
+
+/* ============================================
+   Responsiveness (Mobile & Tablet)
+   ============================================ */
+
+/* Di Tablet (Layar < 1024px), mungkin lebih baik 1 kolom agar teks tidak sempit */
+@media (max-width: 1024px) {
+  .program-grid {
+    grid-template-columns: 1fr; /* Ubah jadi 1 kolom list ke bawah */
   }
 
-  /* Divisi Section Responsive */
-  .divisi-container {
-    flex-direction: column;
-    gap: 40px;
+  .program-title {
+    font-size: 1.5rem; /* Judul bisa lebih besar karena ruang luas */
   }
-  .divisi-content {
+}
+
+/* Di HP (Layar < 480px), gambar pindah ke atas atau bawah */
+@media (max-width: 480px) {
+  .program-item {
+    flex-direction: column-reverse; /* Gambar di atas, Teks di bawah */
+    align-items: center;
+  }
+
+  .program-item .program-content {
+    order: 2; /* Teks pindah bawah */
+    padding-right: 0;
+    text-align: center; /* Center align di HP lebih rapi */
+  }
+
+  .program-item .program-image {
+    order: 1; /* Gambar pindah atas */
+    width: 100%; /* Gambar full width */
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .program-text {
     text-align: center;
   }
-  .divisi-cta {
-    justify-content: center;
+}
+
+/* Styling Wadah Ikon */
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem; /* Posisi tengah */
+
+  /* Membuat lingkaran background tipis (Opsional, agar modern) */
+  background-color: #f0f4ff;
+  border-radius: 50%;
+
+  /* Flexbox untuk menengahkan ikon di dalam lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+/* Styling Ikon Font Awesome-nya */
+.contact-icon i {
+  font-size: 24px; /* Ukuran ikon */
+  color: #003399; /* Warna Biru Utama Vinix */
+}
+
+/* Efek Hover (Opsional: Biar interaktif) */
+.contact-card:hover .contact-icon {
+  background-color: #003399; /* Background jadi biru */
+  transform: translateY(-5px);
+}
+
+.contact-card:hover .contact-icon i {
+  color: #ffffff; /* Ikon jadi putih saat di-hover */
+}
+
+/* ============================================
+   FLOATING PANDU WIDGET (VERSI KANAN)
+   ============================================ */
+
+.pandu-widget {
+  position: fixed;
+  right: 70px; /* UBAH: Menempel di Kanan */
+  bottom: 70px;
+  z-index: 9999;
+
+  display: flex;
+  /* UBAH: Membalik urutan visual (Logo di Kanan, Teks di Kiri) */
+  flex-direction: row-reverse;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* --- A. LOGO WRAPPER --- */
+.pandu-logo-wrapper {
+  width: 64px;
+  height: 64px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 51, 153, 0.25), 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 2; /* Logo tetap di atas */
+}
+
+.pandu-logo-img {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+.pandu-widget:hover .pandu-logo-wrapper {
+  transform: scale(1.1) rotate(-5deg); /* Miring ke kiri sedikit */
+  box-shadow: 0 12px 32px rgba(0, 51, 153, 0.4);
+}
+
+/* --- B. HOVER CARD (Deskripsi) --- */
+.pandu-hover-card {
+  /* --- Posisi & Transisi (JANGAN DIUBAH) --- */
+  position: absolute;
+  right: 20px;
+  left: auto;
+  width: 240px;
+  background: #ffffff;
+
+  /* --- Padding Tetap (Kanan Besar untuk Logo) --- */
+  padding: 16px 40px;
+
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* Animasi Masuk */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  z-index: 1;
+  pointer-events: none;
+
+  /* --- PERUBAHAN UTAMA DISINI --- */
+  text-align: left; /* Ubah jadi Rata Kiri agar rapi */
+}
+/* Karena text-align right, kita perlu menata header kartu juga */
+pandu-hover-card .card-header {
+  display: flex;
+
+  /* Kembalikan urutan normal (Emotikon Kiri, Teks Kanan) */
+  flex-direction: row;
+
+  /* Rata Kiri */
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+/* Membalik urutan emoji dan teks judul di header agar enak dibaca dari kanan */
+.pandu-hover-card .card-header {
+  flex-direction: row-reverse;
+}
+
+.pandu-hover-card .emoji {
+  font-size: 1.2rem;
+}
+
+.pandu-hover-card .title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+
+.pandu-hover-card .desc {
+  font-family: "Public Sans", sans-serif;
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+  /* Memastikan deskripsi juga rata kiri */
+  display: block;
+}
+.pandu-hover-card strong {
+  color: #003399;
+}
+
+/* --- C. INTERAKSI (TRIGGER) --- */
+.pandu-widget:hover .pandu-hover-card {
+  opacity: 1;
+  visibility: visible;
+  /* UBAH: Kartu "meluncur" ke kiri menjauhi logo */
+  right: 15px;
+  transform: translateX(0);
+}
+
+/* --- RESPONSIVE (Mobile) --- */
+@media (max-width: 768px) {
+  .pandu-widget {
+    right: 20px; /* Jarak aman di HP */
+    bottom: 80px; /* Agak naik supaya tidak ketutup tombol navigasi browser */
   }
 
-  .divisi-grid {
-    flex-direction: column;
-    height: auto;
-    overflow: visible;
-    mask-image: none;
-    -webkit-mask-image: none;
-    width: 100%;
-  }
-  .grid-column {
-    animation: none !important;
-  }
-  .divisi-card {
-    width: 100%;
-  }
-  .divisi-card h3 {
-    font-size: 18px;
-    line-height: 1.4;
-  }
-  /* Sembunyikan duplikat js di mobile */
-  .grid-column > .divisi-card:nth-child(n + 4) {
+  /* Sembunyikan teks di HP, cukup logo saja */
+  .pandu-hover-card {
     display: none;
   }
 }
