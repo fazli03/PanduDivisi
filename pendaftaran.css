@@ -50,7 +50,7 @@ main {
   margin: 0 auto;
   padding: 40px;
 
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.051);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -76,7 +76,7 @@ main {
 /* Saat langkah tersebut SUDAH SELESAI (Filled) */
 .progress-step.filled {
   background: #667eea; /* Warna Ungu */
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 0 10px #667eea66;
 }
 
 /* Saat langkah tersebut SEDANG AKTIF (Optional: Sedikit lebih terang/beda) */
@@ -194,7 +194,7 @@ input:focus {
 }
 
 .selected-division-box {
-  background: rgba(102, 126, 234, 0.1);
+  background: #667eea1a;
   border: 1px solid #667eea;
   border-radius: 12px;
   padding: 20px;
@@ -352,8 +352,8 @@ input:focus {
 
 /* Info Box & Link */
 .info-box {
-  background: rgba(255, 215, 0, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: #ffd7001a;
+  border: 1px solid #ffd7004d;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -582,7 +582,7 @@ textarea:focus {
 }
 .apply-btn {
   padding: 0 20px;
-  background: #333;
+  background: #333333;
   color: #fff;
   border: 1px solid #555;
   border-radius: 10px;
